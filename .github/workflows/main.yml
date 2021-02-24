@@ -8,8 +8,8 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "Hêllẞø†"
-          replace: "VΛDΣЯ"
+          find: "HellBot_Official_Chat"
+          replace: "Vader_RoBot"
       - name: Pull All Updates
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
