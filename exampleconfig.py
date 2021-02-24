@@ -28,15 +28,9 @@ class Development(Config):
   # Create a private group and add rose bot to it.
   # and type /id and paste that id here.
   # replace that -100 with that group id.
-  PRIVATE_GROUP_BOT_API_ID = -100
-
-  # Custom Command Handler. 
-  COMMAND_HAND_LER = "."
+  LOGGER = -100
 
   # enter the userid of sudo users.
   # you can add multiple ids by separating them by space.
   # fill values in [] only.
   SUDO_USERS = []
-
-  # command hanler for sudo users.
-  SUDO_COMMAND_HAND_LER = "."
