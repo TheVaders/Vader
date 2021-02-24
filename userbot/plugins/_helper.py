@@ -40,7 +40,7 @@ async def info(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} sudo plugins of Hêllẞø†\n\n"
+            "Total {count} commands found in {plugincount} sudo plugins of VΛDΣЯ\n\n"
         )
         hellcount = 0
         plugincount = 0
@@ -63,7 +63,7 @@ async def info(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"All commands of the Hêllẞø† are [here]({url})"
+            reply_text = f"All commands of the VΛDΣЯ are [here]({url})"
             await event.reply(reply_text, link_preview=False)
             return
         await event.reply(

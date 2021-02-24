@@ -7,7 +7,7 @@
 [![Contact Me](https://img.shields.io/badge/Telegram-Contact%20Me-informational)](https://t.me/kraken_the_badass)
 
 
-<h1 align="center">⚡ †hê Hêllẞø† ⚡</h1>
+<h1 align="center">⚡ †hê VΛDΣЯ ⚡</h1>
 <h4 align="center">Legendary AF HellBot</h4>
 
 <h5>This is a userbot made for telegram. I made this userbot with help of all other userbots available in telegram. All credits goes to its Respective Owners.</h5>
@@ -37,7 +37,7 @@ Enjoy Your Bot!!💝
 
 ```
 Get help regarding setting up 
-your Hêllẞø† in our official 
+your VΛDΣЯ in our official 
 support Group and get updates
 notifications in Update Channel.
 ```
@@ -50,9 +50,9 @@ notifications in Update Channel.
   <summary> Video Tutorial 📺 </summary>
 
 ```
-Official YouTube Channel Of Hêllẞø†.
+Official YouTube Channel Of VΛDΣЯ.
 Click on the link below to get tutorial on 
-How To Deploy Hêllẞø†.
+How To Deploy VΛDΣЯ.
 ```
 <a href="https://youtu.be/M2FQJq_sHp4"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
 <a href="https://youtu.be/M2FQJq_sHp4"><img src="https://img.shields.io/youtube/views/M2FQJq_sHp4?style=social">

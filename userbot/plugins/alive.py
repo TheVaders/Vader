@@ -28,7 +28,7 @@ pm_caption += (
 
 pm_caption += f"🛡️TELETHON🛡️ : `{version.__version__}` \n"
 
-pm_caption += f"😈Hêllẞø†😈       : __**{hellversion}**__\n"
+pm_caption += f"😈VΛDΣЯ😈       : __**{hellversion}**__\n"
 
 pm_caption += f"⚜️Sudo⚜️            : `{sudou}`\n"
 

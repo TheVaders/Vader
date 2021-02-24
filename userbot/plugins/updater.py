@@ -114,7 +114,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "Updated your __Hêllẞø†__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
+                "Updated your __VΛDΣЯ__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
             )
     else:
         await event.edit("**Please set up** `HEROKU_API_KEY` **variable.**")
@@ -128,7 +128,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "Updated your __Hêllẞø†__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
+        "Updated your __VΛDΣЯ__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -188,7 +188,7 @@ async def upstream(event):
     """ - Special case for deploy - """
     if conf == "deploy":
         await event.edit(
-            "Updated your Hêllẞø† successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏\n\n**NOTE :** This is a powerful update process."
+            "Updated your VΛDΣЯ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏\n\n**NOTE :** This is a powerful update process."
         )
         await deploy(event, repo, ups_rem, ac_br, txt)
         return

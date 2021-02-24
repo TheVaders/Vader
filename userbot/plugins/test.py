@@ -12,17 +12,17 @@ from userbot.cmdhelp import CmdHelp
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 
-        await edit_or_reply(event, "`Testing Hêllẞø†`")
+        await edit_or_reply(event, "`Testing VΛDΣЯ`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing Hêllẞø†.`")
+        await edit_or_reply(event, "`Testing VΛDΣЯ.`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing Hêllẞø†..`")
+        await edit_or_reply(event, "`Testing VΛDΣЯ..`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing Hêllẞø†...`")
+        await edit_or_reply(event, "`Testing VΛDΣЯ...`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing Hêllẞø†....`")
+        await edit_or_reply(event, "`Testing VΛDΣЯ....`")
         await asyncio.sleep(1)
-        await edit_or_reply(event, "`Testing Hêllẞø†.....`")
+        await edit_or_reply(event, "`Testing VΛDΣЯ.....`")
         await asyncio.sleep(2)
         await edit_or_reply(event, "__Testing Successful__")
         await asyncio.sleep(2)
@@ -33,7 +33,7 @@ async def _(event):
         await edit_or_reply(event, "**SAVING OUTPUT TO HELLBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
         await edit_or_reply(event, 
-            "Your[Hêllẞø†](https:/t.me/hellbot_official) is working Fine...\n       Join @HellBot_Official_Chat For Any Help......"
+            "Your[VΛDΣЯ](https:/t.me/hellbot_official) is working Fine...\n       Join @HellBot_Official_Chat For Any Help......"
         )
 
 CmdHelp("test").add_command(
