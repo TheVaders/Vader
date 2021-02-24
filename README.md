@@ -52,6 +52,8 @@ notifications in Update Channel.
     - `STRING_SESSION`:   You can get this value from running `python3 string_session.py` in termux after cloning this repo. Or just using [repl run](https://repl.it/@HellBoyOP/HellBot#main.py)
     - `LOGGER`:   Make a Channel Or Group and get it's id.
     - `DATABASE_URL`:   Make a database on elephant sql and paste the url.
+    - `BOT_TOKEN`:   Make a Bot from [Botfather](https://t.me/botfather) and paste the bot token here.
+    - `BOT_USERNAME`:   Paste the Username of bot that you made from [BotFather](https://t.me/botfather).
 - The userbot will not work without setting the mandatory vars.
 
 <details>
