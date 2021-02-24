@@ -1,22 +1,11 @@
-<h3>☣️ The Most Powerfull Userbot ☣️</h3>
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f7c51539e67b483bb8d7749acca51d3a)](https://app.codacy.com/gh/HellBoy-OP/HellBot?utm_source=github.com&utm_medium=referral&utm_content=HellBoy-OP/HellBot&utm_campaign=Badge_Grade_Settings)
-[![Python 3.6](https://img.shields.io/badge/Python-3.6%20or%20newer-blue.svg)](https://www.python.org/downloads/release/python-360/)
-
-![GitHub repo size](https://img.shields.io/github/repo-size/HellBoy-OP/Hellbot)
-[![Contact Me](https://img.shields.io/badge/Telegram-Contact%20Me-informational)](https://t.me/kraken_the_badass)
+<h3 align="center">†hê Clønê øf</h3>
+<h2 align="center"> <a href="https://github.com/hellboy-op/hellbot">🔥 †hê Hêllẞø† 🔥</a></h2>
 
 
 <h1 align="center">⚡ †hê VΛDΣЯ ⚡</h1>
-<h4 align="center">Legendary AF HellBot</h4>
 
-<h5>This is a userbot made for telegram. I made this userbot with help of all other userbots available in telegram. All credits goes to its Respective Owners.</h5>
 
-This is the one and only official HellBot Userbot made by #Team_HellBoy.
-Don't forget to star this repo if you liked it.
-Enjoy Your Bot!!💝
-
-[![HellBot logo](https://telegra.ph/file/2165457cc7e428ff64919.jpg)](https://t.me/hellbot_official)
+[![HellBot logo](https://telegra.ph/file/2165457cc7e428ff64919.jpg)](https://t.me/Vader_RoBot)
 
 
 ### The owner would not be responsible for any kind of bans due to the bot...
@@ -31,6 +20,8 @@ Enjoy Your Bot!!💝
 
 • [Uniborg](https://github.com/spechide/uniborg)
 
+• [Hêllẞø†](https://github.com/hellboy-op/hellbot)
+
 </details>
 <details>
   <summary> Official Supports ✅ </summary>
@@ -43,39 +34,24 @@ notifications in Update Channel.
 ```
 
 <a href="https://t.me/Vader_RoBot"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
-<a href="https://t.me/Vader_RoBot"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
-
-</details>
-<details>
-  <summary> Video Tutorial 📺 </summary>
-
-```
-Official YouTube Channel Of VΛDΣЯ.
-Click on the link below to get tutorial on 
-How To Deploy VΛDΣЯ.
-```
-<a href="https://youtu.be/M2FQJq_sHp4"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
-<a href="https://youtu.be/M2FQJq_sHp4"><img src="https://img.shields.io/youtube/views/M2FQJq_sHp4?style=social">
 
 </details>
 
-<h2 align="center">⚙️ Set-Up ⚙️</h2>
-<h3 align="center">✨ The Easy Way ✨</h3>
-<h4>⚜️ DEPLOY TO HEROKU ⚜️</h4>
-
-<a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FHellBoy-OP%2FHellBot&template=https%3A%2F%2Fgithub.com%2FHellBoy-OP%2FHellBot" rel="nofollow" style="background-color: initial; box-sizing: border-box; color: #0366d6; text-decoration-line: none;"><img alt="Deploy" data-canonical-src="https://www.herokucdn.com/deploy/button.svg" src="https://camo.githubusercontent.com/83b0e95b38892b49184e07ad572c94c8038323fb/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e737667" style="border-style: none; box-sizing: initial; max-width: 100%;" /></a></div>
-
-</a>  <a href="https://github.com/hellboy-op"><img src="https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif" width="40" height="40"></a>
+<h1 align="center">⚙️ Set-Up ⚙️</h1>
 
 <h4 align="center">⚔️ The Normal Way ⚔️</h4>
+
 ### Soon........
 
 ## Mandatory Vars
 
-- Only two of the environment variables are mandatory.
-- This is because of `telethon.errors.rpc_error_list.ApiIdPublishedFloodError`
-    - `APP_ID`:   You can get this value from https://my.telegram.org
-    - `API_HASH`:   You can get this value from https://my.telegram.org
+- Some of the environment variables are mandatory.
+- These are listed below.
+    - `APP_ID`:   You can get this value from [here](https://my.telegram.org)
+    - `API_HASH`:   You can get this value from [here](https://my.telegram.org)
+    - `STRING_SESSION`:   You can get this value from running `python3 string_session.py` in termux after cloning this repo. Or just using [repl run](https://repl.it/@HellBoyOP/HellBot#main.py)
+    - `LOGGER`:   Make a Channel Or Group and get it's id.
+    - `DATABASE_URL`:   Make a database on elephant sql and paste the url.
 - The userbot will not work without setting the mandatory vars.
 
 <details>
@@ -85,7 +61,7 @@ How To Deploy VΛDΣЯ.
 
 Copyright (C) 2021 HellBoy-OP
 
-Poject [HellBot](https://github.com/HellBoy-OP/HellBot) is free software: you can redistribute it and/or modify
+Poject [VΛDΣЯ](https://github.com/TheVaders/Vader) is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
