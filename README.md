@@ -1,5 +1,5 @@
 <h3 align="center">†hê Clønê øf</h3>
-<h2 align="center"> <a href="https://github.com/hellboy-op/hellbot">🔥 †hê Hêllẞø† 🔥</a></h2>
+<h2 align="center"> <a href="https://github.com/thevaders/vader">🔥 †hê Hêllẞø† 🔥</a></h2>
 
 
 <h1 align="center">⚡ †hê VΛDΣЯ ⚡</h1>
@@ -20,7 +20,7 @@
 
 • [Uniborg](https://github.com/spechide/uniborg)
 
-• [Hêllẞø†](https://github.com/hellboy-op/hellbot)
+• [Hêllẞø†](https://github.com/thevaders/vader)
 
 </details>
 <details>

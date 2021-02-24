@@ -36,7 +36,7 @@ pm_caption += "⚠️CHANNEL⚠️   : [ᴊᴏɪɴ](https://t.me/Vader_RoBot)\n"
 
 pm_caption += "🔥CREATOR🔥    : [Nub Here](https://t.me/kraken_the_badass)\n\n"
 
-pm_caption += "    [✨REPO✨](https://github.com/hellboy-op/hellbot) 🔹 [📜License📜](https://github.com/HellBoy-OP/HellBot/blob/master/LICENSE)"
+pm_caption += "    [✨REPO✨](https://github.com/thevaders/vader) 🔹 [📜License📜](https://github.com/HellBoy-OP/HellBot/blob/master/LICENSE)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
