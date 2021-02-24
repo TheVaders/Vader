@@ -1,6 +1,6 @@
 {
   "name": "VΛDΣЯ",
-  "description": "The best userbot made by @Kraken_The_BadASS. Made with Love And Phone And Hardwork and... Nhi aur kahi se to nhi bana....For Support Join @HellBot_Official ",
+  "description": "The best userbot made by @Kraken_The_BadASS. Made with Love And Phone And Hardwork and... Nhi aur kahi se to nhi bana....For Support Join @Vader_RoBot ",
   "logo": "https://telegra.ph/file/7decf235312af8536e9aa.jpg ",
     "keywords": [
     "telegram",
@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/HellBoy-OP/HellBot/",
   "website": "https://github.com/HellBoy-OP/HellBot/",
-  "success_url": "https://t.me/HellBot_Official",
+  "success_url": "https://t.me/Vader_RoBot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",

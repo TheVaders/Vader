@@ -75,7 +75,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@HellBot_Official":
+        if event.query.user_id == bot.uid and query == "@Vader_RoBot":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
@@ -94,11 +94,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         else:
             result = builder.article(
-                "@HellBot_Official",
-                text="""**Hey! This is [VΛDΣЯ.](https://t.me/HellBot_Official) \nYou can know more about me from the links given below 👇**""",
+                "@Vader_RoBot",
+                text="""**Hey! This is [VΛDΣЯ.](https://t.me/Vader_RoBot) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/HellBot_Official"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/Vader_RoBot"),
                         custom.Button.url(
                             "⚡ GROUP ⚡", "https://t.me/Vader_RoBot"
                         ),
@@ -127,7 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF** [Hêllẞøt](https://t.me/HellBot_Official) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF** [Hêllẞøt](https://t.me/Vader_RoBot) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )

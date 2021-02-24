@@ -1,4 +1,4 @@
-# Made by @Kraken_the_badass for @HellBot_Official
+# Made by @Kraken_the_badass for @Vader_RoBot
 
 import asyncio
 from telethon import events

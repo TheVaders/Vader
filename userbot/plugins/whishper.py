@@ -1,4 +1,4 @@
-# Made by @Kraken_The_BadASS for @HellBot_Official
+# Made by @Kraken_The_BadASS for @Vader_RoBot
 
 from hellbot.utils import *
 from userbot.cmdhelp import CmdHelp
