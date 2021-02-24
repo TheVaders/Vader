@@ -100,7 +100,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [
                         custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/HellBot_Official"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/HellBot_Official_Chat"
+                            "⚡ GROUP ⚡", "https://t.me/Vader_RoBot"
                         ),
                     ],
                     [

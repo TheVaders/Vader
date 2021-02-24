@@ -33,7 +33,7 @@ async def _(event):
         await edit_or_reply(event, "**SAVING OUTPUT TO HELLBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
         await edit_or_reply(event, 
-            "Your[VΛDΣЯ](https:/t.me/hellbot_official) is working Fine...\n       Join @HellBot_Official_Chat For Any Help......"
+            "Your[VΛDΣЯ](https:/t.me/hellbot_official) is working Fine...\n       Join @Vader_RoBot For Any Help......"
         )
 
 CmdHelp("test").add_command(

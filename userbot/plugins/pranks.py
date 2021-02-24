@@ -275,5 +275,5 @@ CmdHelp("prank").add_command(
 ).add_command(
   "threats", "<reply to image/sticker>", "Changes the given pic to another pic which shows that pic content is threat to society as that of nuclear bomb"
 ).add_command(
-  "prank", None, "If this module doesn't work then contact admins in @HellBot_Official_Chat"
+  "prank", None, "If this module doesn't work then contact admins in @Vader_RoBot"
 ).add()
