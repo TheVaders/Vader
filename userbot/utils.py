@@ -114,12 +114,12 @@ def admin_cmd(pattern=None, command=None, **args):
             except BaseException:
                 CMD_LIST.update({file_test: [cmd]})
         else:
-            if len(Config.COMMAND_HAND_LER) == 2:
-                hellreg = "^" + Config.COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER[1]
-            elif len(Config.COMMAND_HAND_LER) == 1:
-                hellreg = "^\\" + Config.COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER
+            if len(Config.CMD_HANDLER) == 2:
+                hellreg = "^" + Config.CMD_HANDLER
+                reg = Config.CMD_HANDLER[1]
+            elif len(Config.CMD_HANDLER) == 1:
+                hellreg = "^\\" + Config.CMD_HANDLER
+                reg = Config.CMD_HANDLER
             args["pattern"] = re.compile(hellreg + pattern)
             if command is not None:
                 cmd = reg + command
@@ -179,12 +179,12 @@ def sudo_cmd(pattern=None, command=None, **args):
             except BaseException:
                 SUDO_LIST.update({file_test: [cmd]})
         else:
-            if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                hellreg = "^" + Config.SUDO_COMMAND_HAND_LER
-                reg = Config.SUDO_COMMAND_HAND_LER[1]
-            elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                hellreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
-                reg = Config.COMMAND_HAND_LER
+            if len(Config.SUDO_CMD_HANDLER) == 2:
+                hellreg = "^" + Config.SUDO_CMD_HANDLER
+                reg = Config.SUDO_CMD_HANDLER[1]
+            elif len(Config.SUDO_CMD_HANDLER) == 1:
+                hellreg = "^\\" + Config.SUDO_CMD_HANDLER
+                reg = Config.CMD_HANDLER
             args["pattern"] = re.compile(hellreg + pattern)
             if command is not None:
                 cmd = reg + command

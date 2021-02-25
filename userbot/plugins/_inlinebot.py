@@ -205,15 +205,15 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
 
         command = CMD_HELP_BOT[cmd]["commands"][commands]
         if command["params"] is None:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
+            result += f"**🛠 Commands:** `{CMD_HANDLER[:1]}{command['command']}`\n"
         else:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
+            result += f"**🛠 Commands:** `{CMD_HANDLER[:1]}{command['command']} {command['params']}`\n"
 
         if command["example"] is None:
             result += f"**💬 Explanation:** `{command['usage']}`\n\n"
         else:
             result += f"**💬 Explanation:** `{command['usage']}`\n"
-            result += f"**⌨️ For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+            result += f"**⌨️ For Example:** `{CMD_HANDLER[:1]}{command['example']}`\n\n"
 
         await event.edit(
             result,
