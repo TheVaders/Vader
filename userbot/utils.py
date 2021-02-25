@@ -22,11 +22,11 @@ from var import Var
 
 from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
 from userbot.helpers.exceptions import CancelProcess
-from userbot.Config import Config
+from var import Var as Config
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
-    from userbot.Config import Config
+    from var import Var as Config
 else:
     if os.path.exists("config.py"):
         from config import Development as Config

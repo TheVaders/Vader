@@ -1,4 +1,4 @@
-from userbot.Config import Config
+from var import Var as Config
 import asyncio
 
 import requests

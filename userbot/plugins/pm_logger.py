@@ -10,7 +10,7 @@ from asyncio import sleep
 from telethon import events
 
 from userbot import BOTLOG, BOTLOG_CHATID, bot
-from userbot.Config import Config
+from var import Var as Config
 from hellbot.utils import admin_cmd, register
 from userbot.cmdhelp import CmdHelp
 

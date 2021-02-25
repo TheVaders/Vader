@@ -34,7 +34,7 @@ from userbot import BOTLOG, BOTLOG_CHATID
 
 from hellbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
-from userbot.Config import Config
+from var import Var as Config
 
 # =================== CONSTANT ===================
 
