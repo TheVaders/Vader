@@ -41,9 +41,7 @@ class Var(object):
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Vader")
     OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
     G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
-    FBAN_LOGGER_GROUP = os.environ.get("FBAN_LOGGER_GROUP", None)
-    if FBAN_LOGGER_GROUP:
-    FBAN_LOGGER_GROUP = int(FBAN_LOGGER_GROUP)
+    FBAN_LOGGER_GROUP = int(os.environ.get("FBAN_LOGGER_GROUP", None))
     GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
     TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
     SPOTIFY_USERNAME = os.environ.get("SPOTIFY_USERNAME", None)
