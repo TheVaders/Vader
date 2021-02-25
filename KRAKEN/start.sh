@@ -39,3 +39,5 @@ echo """
                        ᏝΣGΣПDΛЯY   ΛF   VΛDΣЯ !!
                                           @Vader_RoBot
 """
+
+python3 -m userbot
