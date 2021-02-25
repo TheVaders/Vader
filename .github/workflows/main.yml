@@ -8,7 +8,7 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "PRIVATE_GROUP_BOT_API_ID"
+          find: "PM_LOGGR_BOT_API_ID"
           replace: "LOG_CHANNEL"
       - name: Pull All Updates
         uses: stefanzweifel/git-auto-commit-action@v4
