@@ -77,9 +77,9 @@ if ENV:
         HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
         HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
         # send .get_id in any channel to forward all your NEW PMs to this group
-        PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", None)
-        if PRIVATE_GROUP_BOT_API_ID:
-            PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
+        LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
+        if LOG_CHANNEL:
+            LOG_CHANNEL = int(LOG_CHANNEL)
         # send .get_id in your private channel to forward all your Private messages
 
         TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
