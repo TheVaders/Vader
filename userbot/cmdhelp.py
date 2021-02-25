@@ -1,7 +1,7 @@
 from userbot import CMD_HELP, CMD_HELP_BOT
-import os
+from var import Var
 
-COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r".")
+handler = Var.CMD_HANDLER
 
 #################################################################################################################
 
@@ -15,7 +15,7 @@ class CmdHelp:
     FILE_AUTHOR = ""
     IS_OFFICIAL = True
     COMMANDS = {}
-    PREFIX = COMMAND_HAND_LER
+    PREFIX = handler
     WARNING = ""
     INFO = ""
 
@@ -79,16 +79,16 @@ class CmdHelp:
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
             if command["params"] == None:
-                result += f"**🛠 Command :** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
+                result += f"**🛠 Command :** `{handler[:1]}{command['command']}`\n"
             else:
-                result += f"**🛠 Command :** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🛠 Command :** `{handler[:1]}{command['command']} {command['params']}`\n"
 
             if command["example"] == None:
                 result += f"**💬 Details :** `{command['usage']}`\n\n"
             else:
                 result += f"**💬 Details :** `{command['usage']}`\n"
                 result += (
-                    f"**⌨️ For Example :** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+                    f"**⌨️ For Example :** `{command['example']}`\n\n"
                 )
         return result
 
