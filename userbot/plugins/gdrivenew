@@ -58,8 +58,8 @@ async def _(event):
             "This module requires credentials from https://da.gd/so63O. Aborting!"
         )
         return
-    if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+    if Config.LOG_CHANNEL is None:
+        await edit_or_reply(event, "Please set the required environment variable `LOG_CHANNEL` for this plugin to work"
         )
         return
     input_str = event.pattern_match.group(1)
@@ -174,8 +174,8 @@ async def _(event):
             "This module requires credentials from https://da.gd/so63O. Aborting!"
         )
         return
-    if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+    if Config.LOG_CHANNEL is None:
+        await edit_or_reply(event, "Please set the required environment variable `LOG_CHANNEL` for this plugin to work"
         )
         return
     input_str = event.pattern_match.group(1)
@@ -213,8 +213,8 @@ async def _(event):
             "This module requires credentials from https://da.gd/so63O. Aborting!"
         )
         return
-    if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+    if Config.LOG_CHANNEL is None:
+        await edit_or_reply(event, "Please set the required environment variable `LOG_CHANNEL` for this plugin to work"
         )
         return
     t_reqd_comd = event.pattern_match.group(1)
@@ -249,8 +249,8 @@ async def _(event):
             "This module requires credentials from https://da.gd/so63O. Aborting!"
         )
         return
-    if Config.PLUGIN_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `PLUGIN_CHANNEL` for this plugin to work"
+    if Config.LOG_CHANNEL is None:
+        await edit_or_reply(event, "Please set the required environment variable `LOG_CHANNEL` for this plugin to work"
         )
         return
     input_str = event.pattern_match.group(1).strip()
@@ -284,12 +284,12 @@ async def create_token_file(token_file, event):
         CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, redirect_uri=REDIRECT_URI
     )
     authorize_url = flow.step1_get_authorize_url()
-    async with event.client.conversation(Config.PLUGIN_CHANNEL) as conv:
+    async with event.client.conversation(Config.LOG_CHANNEL) as conv:
         await conv.send_message(
             f"Go to the following link in your browser: {authorize_url} and reply the code"
         )
         response = conv.wait_event(
-            events.NewMessage(outgoing=True, chats=Config.PLUGIN_CHANNEL)
+            events.NewMessage(outgoing=True, chats=Config.LOG_CHANNEL)
         )
         response = await response
         code = response.message.message.strip()
