@@ -94,7 +94,6 @@ async def FindMusicPleaseBot(gaana):
 
 
 # -------------------------------------------------------------------------------
-"""
 
 import json
 import os
@@ -361,7 +360,6 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp4")
         await rkp.delete()
 
-"""
 # -------------------------------------------------------------------------------
 import os
 from telethon.tl.functions.channels import JoinChannelRequest
