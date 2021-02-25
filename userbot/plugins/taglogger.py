@@ -19,7 +19,7 @@ if Config.TAG_LOGGER:
     async def all_messages_catcher(event):
         # the bot might not have the required access_hash to mention the
         # appropriate PM
-        await event.forward_to(Var.TG_BOT_USER_NAME_BF_HER)
+        await event.forward_to(Var.BOT_USERNAME)
 
         # construct message
         # the message format is stolen from @MasterTagAlertBot

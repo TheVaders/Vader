@@ -23,7 +23,7 @@ class Development(Config):
 
   # Create a bot in @botfather and fill the following values with bot token and username.
   BOT_TOKEN = "Your value" #token
-  TG_BOT_USER_NAME_BF_HER = "Your value" #username
+  BOT_USERNAME = "Your value" #username
 
   # Create a private group and add rose bot to it.
   # and type /id and paste that id here.
