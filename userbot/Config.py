@@ -84,11 +84,8 @@ if ENV:
 
         TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
         if TAG_LOGGER: TAG_LOGGER = int(TAG_LOGGER)
-
         #Tag LOGGER
 
-        LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
-        if LOG_CHANNEL: LOG_CHANNEL = int(LOG_CHANNEL)
         # For Databases
         # can be None in which case plugins requiring
         # DataBase would not work
