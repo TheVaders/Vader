@@ -110,7 +110,6 @@ if ENV:
         VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
         GROUP_REG_SED_EX_BOT_S = os.environ.get("GROUP_REG_SED_EX_BOT_S", r"(regex|moku|BananaButler_|rgx|l4mR)bot")
         TEMP_DIR = os.environ.get("TEMP_DIR", None)
-        LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -100))
         watermark_path = os.environ.get("watermark_path", None)
         #Google Chrome Stuff
         CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver")
