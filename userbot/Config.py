@@ -71,7 +71,7 @@ if ENV:
         MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
         #pm log
         PM_LOG_GRP_ID = os.environ.get("PM_LOG_GRP_ID", None)
-        # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
+        # set to True if you want to log PMs to your LOG_CHANNEL
         NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", True))
         #heroku 
         HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -87,8 +87,8 @@ if ENV:
 
         #Tag LOGGER
 
-        PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID", None)
-        if PM_LOGGR_BOT_API_ID: PM_LOGGR_BOT_API_ID = int(PM_LOGGR_BOT_API_ID)
+        LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
+        if LOG_CHANNEL: LOG_CHANNEL = int(LOG_CHANNEL)
         # For Databases
         # can be None in which case plugins requiring
         # DataBase would not work
