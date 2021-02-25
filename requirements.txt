@@ -32,7 +32,6 @@ googletrans==3.1.0a0
 geopy
 gsearch
 hachoir
-heroku3
 httplib2
 humanize
 justwatch
@@ -67,7 +66,7 @@ spotdl
 sqlalchemy>=1.2
 telegraph
 twitter_scraper
-telethon==1.19.0
+telethon
 html-telegraph-poster
 urbandict>=0.5
 validators
