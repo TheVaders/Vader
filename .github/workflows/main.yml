@@ -8,7 +8,7 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "PLUGIN_CHANNEL"
+          find: "CHANNEL_ID"
           replace: "LOG_CHANNEL"
       - name: Pull All Updates
         uses: stefanzweifel/git-auto-commit-action@v4
