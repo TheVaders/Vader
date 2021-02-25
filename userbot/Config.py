@@ -27,10 +27,6 @@ if ENV:
         # Send .get_id in any group with all your administration bots (added)
         G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
         # TG API limit. An album can have atmost 10 media!
-        FBAN_LOGGER_GROUP = os.environ.get("FBAN_LOGGER_GROUP", None)
-        if FBAN_LOGGER_GROUP:
-            FBAN_LOGGER_GROUP = int(FBAN_LOGGER_GROUP)
-
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
         # Telegram BOT Token from @BotFather
@@ -77,14 +73,9 @@ if ENV:
         HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
         HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
         # send .get_id in any channel to forward all your NEW PMs to this group
-        LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
-        if LOG_CHANNEL:
-            LOG_CHANNEL = int(LOG_CHANNEL)
         # send .get_id in your private channel to forward all your Private messages
 
-        TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
-        if TAG_LOGGER: TAG_LOGGER = int(TAG_LOGGER)
-        #Tag LOGGER
+        TAG_LOGGER = int(os.environ.get("TAG_LOGGER", None))
 
         # For Databases
         # can be None in which case plugins requiring
