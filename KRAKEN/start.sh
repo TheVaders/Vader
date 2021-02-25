@@ -40,4 +40,4 @@ echo """
                                           @Vader_RoBot
 """
 
-python3 -m userbot
+python -m userbot
