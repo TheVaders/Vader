@@ -22,7 +22,7 @@ class Development(Config):
   STRING_SESSION = "Your value"
 
   # Create a bot in @botfather and fill the following values with bot token and username.
-  TG_BOT_TOKEN_BF_HER = "Your value" #token
+  BOT_TOKEN = "Your value" #token
   TG_BOT_USER_NAME_BF_HER = "Your value" #username
 
   # Create a private group and add rose bot to it.
