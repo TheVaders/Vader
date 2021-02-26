@@ -47,7 +47,6 @@ class Var(object):
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Vader")
     OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
     G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
-    FBAN_LOGGER_GROUP = int(os.environ.get("FBAN_LOGGER_GROUP", None))
     GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
     TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
     SPOTIFY_USERNAME = os.environ.get("SPOTIFY_USERNAME", None)
@@ -76,8 +75,11 @@ class Var(object):
     NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", True))
     # send .get_id in your private channel to forward all your Private messages
     TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
-    if TAG_LOGGER: TAG_LOGGER = int(TAG_LOGGER)
-    #Tag LOGGER
+    if TAG_LOGGER != None:
+        try:
+            TAG_LOGGER = int(TAG_LOGGER)
+        except ValueError:
+            raise ValueError("Invalid Log Channel ID. Make sure your ID is starts with -100 and make sure that it is only numbers.")
 
     # For Databases
     # can be None in which case plugins requiring

@@ -75,8 +75,13 @@ if ENV:
         # send .get_id in any channel to forward all your NEW PMs to this group
         # send .get_id in your private channel to forward all your Private messages
 
-        TAG_LOGGER = int(os.environ.get("TAG_LOGGER", None))
-
+        TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
+        if TAG_LOGGER != None:
+            try:
+                TAG_LOGGER = int(TAG_LOGGER)
+            except ValueError:
+                raise ValueError("Invalid Log Channel ID. Make sure your ID is starts with -100 and make sure that it is only numbers.")
+   
         # For Databases
         # can be None in which case plugins requiring
         # DataBase would not work
