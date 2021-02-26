@@ -80,7 +80,7 @@ class Var(object):
             TAG_LOGGER = int(TAG_LOGGER)
         except ValueError:
             raise ValueError("Invalid Log Channel ID. Make sure your ID is starts with -100 and make sure that it is only numbers.")
-
+    # tag logger needs group id
     # For Databases
     # can be None in which case plugins requiring
     # DataBase would not work
