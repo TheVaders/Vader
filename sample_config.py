@@ -10,7 +10,13 @@ class Var(object):
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", None)
     LOGGER = True
     CMD_HANDLER = os.environ.get("CMD_HANDLER", r".")
-
+    FBAN_LOGGER_GROUP = os.environ.get("FBAN_LOGGER_GROUP", None)
+    if FBAN_LOGGER_GROUP != None:
+        try:
+            FBAN_LOGGER_GROUP = int(FBAN_LOGGER_GROUP)
+        except ValueError:
+            raise ValueError("Invalid Log Channel ID. Make sure your ID is starts with -100 and make sure that it is only numbers.")
+   
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
     # Here for later purposes
