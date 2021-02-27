@@ -1,14 +1,14 @@
 <h3 align="center">†hê Clønê øf</h3>
-<h2 align="center"> <a href="https://github.com/thevaders/vader">🔥 †hê Hêllẞø† 🔥</a></h2>
+<h2 align="center"> <a href="https://github.com/HellBoy-OP/HellBot">🔥 †hê Hêllẞø† 🔥</a></h2>
 
 
 <h1 align="center">⚡ †hê VΛDΣЯ ⚡</h1>
 
 
-[![HellBot logo](https://telegra.ph/file/2165457cc7e428ff64919.jpg)](https://t.me/Vader_RoBot)
+[![Vader logo](https://telegra.ph/file/2165457cc7e428ff64919.jpg)](https://t.me/Vader_RoBot)
 
 
-### The owner would not be responsible for any kind of bans due to the bot...
+<h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
 
 
 # FORK AT YOUR OWN RISK
