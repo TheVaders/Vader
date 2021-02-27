@@ -1,7 +1,7 @@
 #!/bin/bash
-#   Copyright (C) 2021 HellBoy-OP
+#   Copyright (C) 2021 TheVaders
 #
-#   Poject HellBot is free software: 
+#   Poject VΛDΣЯ is free software: 
 #   you can redistribute it and/or modify it under the terms of the GNU General Public License 
 #   as published by the Free Software Foundation, either version 3 of the License, 
 #   or (at your option) any later version.
