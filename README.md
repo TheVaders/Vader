@@ -5,7 +5,7 @@
 <h1 align="center">⚡ †hê VΛDΣЯ ⚡</h1>
 
 
-[![Vader logo](https://telegra.ph/file/2165457cc7e428ff64919.jpg)](https://t.me/Vader_RoBot)
+[![Vader logo](https://telegra.ph/file/802564d139132b4cbb763.jpg)](https://t.me/Vader_RoBot)
 
 
 <h2 align="center">The owner would not be responsible for any kind of bans due to the bot.</h2>
