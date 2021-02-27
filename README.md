@@ -14,7 +14,7 @@
 # FORK AT YOUR OWN RISK
 
 <details>
-  <summary> Credits 🏅 </summary>
+  <summary> <h4>Credits 🏅</h4> </summary>
 
 • [JaaduBot](https://github.com/Amberyt/JaaduBot)
 
@@ -24,7 +24,7 @@
 
 </details>
 <details>
-  <summary> Official Supports ✅ </summary>
+  <summary> <h4>Official Supports ✅</h4> </summary>
 
 ```
 Get help regarding setting up 
@@ -86,7 +86,7 @@ notifications in Update Channel.
 </details>
 
 <details>
-  <summary> • LICENSE • </summary>
+  <summary> <h4>• LICENSE •</h4> </summary>
 
 ![](https://www.gnu.org/graphics/gplv3-or-later.png)
 
