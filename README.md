@@ -39,9 +39,34 @@ notifications in Update Channel.
 
 <h1 align="center">⚙️ Set-Up ⚙️</h1>
 
-<h4 align="center">⚔️ The Normal Way ⚔️</h4>
+<details>
+  <summary> <h2>Generate String Session</h2> </summary>
 
-### Soon........
+- Termux
+    - Clone this repository and do 
+           `python3 string_session.py`
+    - Then Fill The Required Details.
+    - API ID, API HASH, PHONE NUMBER (WITH COUNTRY CODE)
+
+- Repl Run
+    - Click [Here](https://repl.it/@HellBoyOP/HellBot#main.py) to open Repl run.
+    - Click On Green Play Button.
+    - Wait for a while then fill the details.
+    - String will be saved in your Saved Message.
+</details>
+
+<details>
+  <summary> <h3>HOSTING 😉</h3> </summary>
+
+- Choose A Hosting Site. And fill the mandatory vars.
+
+## Deploys
+
+- You Can Deploy it on 
+    - [Zeet](zeet.co)
+    - [Uffizzi](uffizzi.com)
+    - Any Other VPS.
+    - No support for Termux Yet.
 
 ## Mandatory Vars
 
@@ -57,6 +82,8 @@ notifications in Update Channel.
     - `BOT_TOKEN`:   Make a Bot from [Botfather](https://t.me/botfather) and paste the bot token here.
     - `BOT_USERNAME`:   Paste the Username of bot that you made from [BotFather](https://t.me/botfather).
 - The userbot will not work without setting the mandatory vars.
+
+</details>
 
 <details>
   <summary> • LICENSE • </summary>
