@@ -63,8 +63,8 @@ notifications in Update Channel.
 ## Deploys
 
 - You Can Deploy it on 
-    - [Zeet](zeet.co)
-    - [Uffizzi](uffizzi.com)
+    - [Zeet](https://zeet.co/new)
+    - [Uffizzi](https://uffizzi.com)
     - Any Other VPS.
     - No support for Termux Yet.
 
