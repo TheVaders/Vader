@@ -43,11 +43,13 @@ notifications in Update Channel.
   <summary> <h2>Generate String Session</h2> </summary>
 
 - Termux
-    - Clone this repository and do 
-           `python3 string_session.py`
+    - Clone this repository.
+    - Then Do  `cd Vader`
+    - Run String Generator By
+           `bash string.sh`
     - Then Fill The Required Details.
     - API ID, API HASH, PHONE NUMBER (WITH COUNTRY CODE)
-
+ 
 - Repl Run
     - Click [Here](https://repl.it/@HellBoyOP/HellBot#main.py) to open Repl run.
     - Click On Green Play Button.
