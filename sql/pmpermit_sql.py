@@ -1,7 +1,6 @@
 from sqlalchemy import Column, String
 
-from sql import BASE, SESSION
-
+from sql import *
 
 class PMPermit(BASE):
     __tablename__ = "pmpermit"
