@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, Integer, String
 
-from sql import BASE, SESSION
+from sql import *
 
 DEF_COUNT = 0
 DEF_LIMIT = 0
