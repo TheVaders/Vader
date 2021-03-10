@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from sql import SESSION, BASE
+from sql import *
 
 
 class fban(BASE):
