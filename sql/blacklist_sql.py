@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, distinct, func
 
-from sql import BASE, SESSION
+from sql import *
 
 
 class BlackListFilters(BASE):
