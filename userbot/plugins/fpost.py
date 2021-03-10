@@ -29,14 +29,14 @@ async def all_groups_id(hell):
 async def _(event):
     if event.fwd_from:
         return
-    if Config.LOG_CHANNEL is None:
+    if Config.LOG_GROUP is None:
         await edit_or_reply(
             event,
-            "Please set the required environment variable `LOG_CHANNEL` for this plugin to work",
+            "Please set the required environment variable `LOG_GROUP` for this plugin to work",
         )
         return
     try:
-        e = await event.client.get_entity(Config.LOG_CHANNEL)
+        e = await event.client.get_entity(Config.LOG_GROUP)
     except Exception as e:
         await edit_or_reply(event, str(e))
     else:

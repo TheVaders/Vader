@@ -22,14 +22,14 @@ auth_url = r["auth_url"]
 async def _(event):
     if event.fwd_from:
         return
-    if Config.LOG_CHANNEL is None:
-        await edit_or_reply(event, "Please set the required environment variable `LOG_CHANNEL` for this plugin to work\n\nGo to [HellBot Chat Group](t.me/hellbot_official_chat) for assistance"
+    if Config.LOG_GROUP is None:
+        await edit_or_reply(event, "Please set the required environment variable `LOG_GROUP` for this plugin to work\n\nGo to [HellBot Chat Group](t.me/hellbot_official_chat) for assistance"
         )
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     await borg.send_message(
-        Config.LOG_CHANNEL,
+        Config.LOG_GROUP,
         "Created New Telegraph account {} for the current session. \n**Do not give this url to anyone, even if they say they are from Telegram!**".format(
             auth_url
         ),

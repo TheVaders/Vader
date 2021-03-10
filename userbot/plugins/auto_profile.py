@@ -52,7 +52,7 @@ async def _(event):
 
         # await borg.send_message(  # pylint:disable=E0602
 
-        #     Config.LOG_CHANNEL,  # pylint:disable=E0602
+        #     Config.LOG_GROUP,  # pylint:disable=E0602
 
         #     "Successfully Changed Profile Name"
 
@@ -84,7 +84,7 @@ async def _(event):
         # else:
         # logger.info(r.stringify())
         # await borg.send_message(  # pylint:disable=E0602
-        # Config.LOG_CHANNEL,  # pylint:disable=E0602
+        # Config.LOG_GROUP,  # pylint:disable=E0602
         # "Successfully Changed Profile Bio"
         # )
         await asyncio.sleep(DEL_TIME_OUT)

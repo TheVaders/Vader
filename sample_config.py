@@ -31,10 +31,10 @@ class Var(object):
         t_file = open(TEMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
         t_file.write(AUTH_TOKEN_DATA)
         t_file.close()
-    LOG_CHANNEL = os.environ.get("LOG_CHANNEL", None)
-    if LOG_CHANNEL != None:
+    LOG_GROUP = os.environ.get("LOG_GROUP", None)
+    if LOG_GROUP != None:
         try:
-            LOG_CHANNEL = int(LOG_CHANNEL)
+            LOG_GROUP = int(LOG_GROUP)
         except ValueError:
             raise ValueError("Invalid Log Channel ID. Make sure your ID is starts with -100 and make sure that it is only numbers.")
     LOCATION = os.environ.get("LOCATION", None)
@@ -72,7 +72,7 @@ class Var(object):
     MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 5))
     #pm log
     PM_LOG_GRP_ID = os.environ.get("PM_LOG_GRP_ID", None)
-    # set to True if you want to log PMs to your LOG_CHANNEL
+    # set to True if you want to log PMs to your LOG_GROUP
     NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", True))
     # send .get_id in your private channel to forward all your Private messages
     TAG_LOGGER = os.environ.get("TAG_LOGGER", None)
