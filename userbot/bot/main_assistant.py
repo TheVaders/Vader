@@ -10,13 +10,13 @@ from telethon.utils import pack_bot_file_id
 
 from hellbot import bot
 from hellbot.Config import Config
-from hellbot.plugins.sql_helper.bl_bot import (
+from hellbot.bot.sql_helper.bl_bot import (
     add_in_db,
     is_id_added,
     removeid,
 )
-from hellbot.plugins.sql_helper.botusers import add_id_in_db, its_userid
-from hellbot.plugins.sql_helper.idadder_sql import (
+from hellbot.bot.sql_helper.botusers import add_id_in_db, its_userid
+from hellbot.bot.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,
