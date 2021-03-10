@@ -5,13 +5,12 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 import os
 from telethon import TelegramClient
 from var import Var
+from userbot.utils import load_module, start_bot
+from userbot import LOAD_PLUG, BOTLOG_CHATID, LOGS, hellversion
 from userbot.Config import Config
-from userbot.utils import load_module
-from userbot import LOAD_PLUG, LOGS, hellversion
 from pathlib import Path
 import asyncio
 import telethon.utils
-
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -49,18 +48,23 @@ for name in files:
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
 
+if Config.BOT_MODE == "ON":
+    path = "userbot/plugins/bot/*.py"
+    files = glob.glob(path)
+    for name in files:
+        with open(name) as f:
+            path1 = Path(f.name)
+            shortname = path1.stem
+            start_bot(shortname.replace(".py", ""))
+    active = "Bot Mode Have Been Activated Successfully !"
+else:
+    active = "Bot Mode Has Been DeActivated Sucessfully !"
+
 import userbot._core
 
-print(f"""HELLBOT IS ON!!! HELLBOT VERSION :- {hellversion}
-JOIN OFFICIAL CHAT GROUP AND UPDATES CHANNEL
-OFFICIAL GROUP :- @HELLBOT_OFFICIAL_CHAT
-OFFICIAL CHANNEL :- @HELLBOT_OFFICIAL
-DO .alive OR .ping CHECK IF I'M ON!
-IF YOU FACE ANY ISSUE THEN ASK AT CHAT GROUP.""")
+print(f"""{active}. HELLBOT IS ON!!! HELLBOT VERSION :- {hellversion} ..!! JOIN OFFICIAL CHAT GROUP AND UPDATES CHANNEL OFFICIAL GROUP :- @HELLBOT_OFFICIAL_CHAT..!! OFFICIAL CHANNEL :- @HELLBOT_OFFICIAL. IF YOU FACE ANY ISSUE THEN ASK AT CHAT GROUP.""")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
-
-
