@@ -55,6 +55,17 @@ if bool(ENV):
                     level=INFO)
     LOGS = getLogger(__name__)
 
+try:
+    if Config.HEROKU_API_KEY is not None or Config.HEROKU_APP_NAME is not None:
+        HEROKU_APP = heroku3.from_key(Config.HEROKU_API_KEY).apps()[
+            Config.HEROKU_APP_NAME
+        ]
+    else:
+        HEROKU_APP = None
+except:
+    HEROKU_APP = None
+
+
     # Check if the config was edited by using the already used variable.
     # Basically, its the 'virginity check' for the config file ;)
     CONFIG_CHECK = os.environ.get(
@@ -152,7 +163,10 @@ if bool(ENV):
                                       password_hash=LASTFM_PASS)
     else:
         lastfm = None
-
+    G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
+    G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
+    G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
+    GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 else:
