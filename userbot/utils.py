@@ -764,8 +764,8 @@ def start_bot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"userbot.bot/{shortname}.py")
-        name = "userbot.bot.{}".format(shortname)
+        path = Path(f"userbot/bot/{shortname}.py")
+        name = "userbot/bot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -776,8 +776,8 @@ def start_bot(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"userbot.bot/{shortname}.py")
-        name = "userbot.bot.{}".format(shortname)
+        path = Path(f"userbot/bot/{shortname}.py")
+        name = "userbot/bot.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
@@ -793,5 +793,5 @@ def start_bot(shortname):
         mod.pitaji = pitaji()
         mod.private_cmd = private_cmd()
         spec.loader.exec_module(mod)
-        sys.modules["userbot.bot" + shortname] = mod
+        sys.modules["userbot/bot" + shortname] = mod
         LOGS.info("Bot Mode Has imported " + shortname)
