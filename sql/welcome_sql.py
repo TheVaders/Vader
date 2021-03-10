@@ -1,6 +1,6 @@
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
 
-from sql import BASE, SESSION
+from sql import *
 
 
 class Welcome(BASE):
