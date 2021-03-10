@@ -191,7 +191,7 @@ async def gunban(userbot):
 
 
 
-
+"""
 @borg.on(ChatAction)
 async def handler(kraken): 
    if kraken.user_joined or kraken.user_added:      
@@ -217,6 +217,7 @@ async def handler(kraken):
                  except:       
                     kraken.reply("`Sheit!! No permission to ban users.\n@admins ban this retard.\nGlobally Banned User And A Potential Spammer`\n**Make your group a safe place by cleaning this shit**")                   
                     return
+"""
                   
                   
 CmdHelp("gban_gmute").add_command(
