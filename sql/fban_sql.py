@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String
-from hellbot.plugins.sql_helper import SESSION, BASE
+from sql import SESSION, BASE
 
 
 class fban(BASE):
