@@ -16,8 +16,8 @@ def start() -> scoped_session:
 
 
 try:
-    SESSION = start()
     BASE = declarative_base()
+    SESSION = start()
 except AttributeError as e:
     # this is a dirty way for the work-around required for #23
     print(
