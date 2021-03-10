@@ -22,15 +22,21 @@ class Development(Config):
   STRING_SESSION = "Your value"
 
   # Create a bot in @botfather and fill the following values with bot token and username.
-  BOT_TOKEN = "Your value" #token
-  BOT_USERNAME = "Your value" #username
+  TG_BOT_TOKEN_BF_HER = "Your value" #token
+  TG_BOT_USER_NAME_BF_HER = "Your value" #username
 
   # Create a private group and add rose bot to it.
   # and type /id and paste that id here.
   # replace that -100 with that group id.
-  LOGGER = -100
+  PRIVATE_GROUP_BOT_API_ID = -100
+
+  # Custom Command Handler. 
+  COMMAND_HAND_LER = "."
 
   # enter the userid of sudo users.
   # you can add multiple ids by separating them by space.
   # fill values in [] only.
   SUDO_USERS = []
+
+  # command hanler for sudo users.
+  SUDO_COMMAND_HAND_LER = "."
