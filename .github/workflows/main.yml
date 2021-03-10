@@ -8,8 +8,8 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@master
         with:
-          find: "LOG_CHANNEL"
-          replace: "LOG_GROUP"
+          find: "userbot.sql_helper"
+          replace: "sql"
       - name: Pull All Updates
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
