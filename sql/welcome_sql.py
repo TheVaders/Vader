@@ -1,6 +1,6 @@
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
 
-from sql import *
+from userbot.plugins.sql_helper import BASE, SESSION
 
 
 class Welcome(BASE):

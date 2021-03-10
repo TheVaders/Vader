@@ -1,6 +1,7 @@
 from sqlalchemy import Column, LargeBinary, Numeric, UnicodeText
 
-from sql import *
+from userbot.plugins.sql_helper import BASE, SESSION
+
 
 class Snips(BASE):
     __tablename__ = "snips"

@@ -1,6 +1,7 @@
 from sqlalchemy import Column, String
 
-from sql import *
+from userbot.plugins.sql_helper import BASE, SESSION
+
 
 class ECHOSQL(BASE):
     __tablename__ = "echo_sql"
