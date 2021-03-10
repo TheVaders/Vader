@@ -1,5 +1,5 @@
 try:
-    from sql import BASE, SESSION
+    from sql import *
 except ImportError:
     raise Exception("Hello!")
 from sqlalchemy import Column, String, UnicodeText
