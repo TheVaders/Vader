@@ -1,5 +1,5 @@
 try:
-    from userbot.plugins.sql_helper import SESSION, BASE
+    from sql import SESSION, BASE
 except ImportError:
     raise Exception("Hello!")
 
