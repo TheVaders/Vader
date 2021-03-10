@@ -1,7 +1,6 @@
 from sqlalchemy import Column, String
 
-from sql import BASE, SESSION
-
+from sql import *
 
 class ECHOSQL(BASE):
     __tablename__ = "echo_sql"
