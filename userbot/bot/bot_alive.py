@@ -1,4 +1,4 @@
-from userbot import ALIVE_NAME, bot, hellversion
+from userbot import ALIVE_NAME, bot, hellversion, botversion
 from userbot.Config import Config
 from telethon import version
 from telethon.events import NewMessage
@@ -6,8 +6,6 @@ from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hêllẞø† Mødê"
-
-botversion = 1.0
 
 ludosudo = Config.SUDO_USERS
 
