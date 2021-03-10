@@ -1,5 +1,5 @@
 try:
-    from sql import SESSION, BASE
+    from sql import *
 except ImportError:
     raise Exception("Hello!")
 
