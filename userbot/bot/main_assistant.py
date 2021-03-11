@@ -16,7 +16,7 @@ from hellbot.bot.sql_helper.bl_bot import (
     removeid,
 )
 from hellbot.bot.sql_helper.botusers import add_id_in_db, its_userid
-from hellbot.bot.sql_helper.idadder_sql import (
+from hellbot.bot.sql_helper.idadder import (
     add_usersid_in_db,
     already_added,
     get_all_users,
