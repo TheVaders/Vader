@@ -348,3 +348,20 @@ async def get_user_from_id(user, event):
     return user_obj
 
 #____________________HELLBOT__________________
+
+file_help = os.path.basename(__file__)
+file_help = file_help.replace(".py", "")
+file_helpo = file_help.replace("_", " ")
+
+__help__ = """
+ - /ban <username/reply/userid> : Bans the mentioned user from that group.
+ - /unban <username/reply/userid> : Unbans the mentioned user from that group.
+ - /promote <username/reply/userid> : Promotes the mentioned user in that group if Bot is admin with Add Admin Right.
+ - /demote <username/reply/userid> : Demotes the mentioned user in that group, if that user was promoted by me.
+ - /pin <reply to a message> : Pins the replied message in that group.
+ - /kick <username/reply/userid> : Kick that mentioned user from group. (They can join back again)
+ - /mute <username/reply/userid> : Mutes the mentioned user in current chat.
+ - /unmute <username/reply/userid> : Unmutes the mentioned user in current chat.
+"""
+
+CMD_HELP.update({file_helpo: [file_helpo, __help__]})
