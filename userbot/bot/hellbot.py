@@ -21,7 +21,12 @@ from hellbot.bot.sql_helper.idadder import (
     already_added,
     get_all_users,
 )
+
+#____________________HELLBOT__________________
+
 hell_logo = "./KRAKEN/hellbot_logo.jpg"
+
+#____________________HELLBOT__________________
 
 @hellbot_cmd("start", is_args=False)
 async def start(event):
@@ -67,6 +72,7 @@ async def start(event):
         if os.path.exists(mypic):
             os.remove(mypic)
 
+#____________________HELLBOT__________________
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deploy")))
 async def help(event):
@@ -82,6 +88,7 @@ async def help(event):
             ],
         )
 
+#____________________HELLBOT__________________
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"users")))
 async def users(event):
@@ -104,6 +111,7 @@ async def users(event):
     else:
         pass
 
+#____________________HELLBOT__________________
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
 async def users(event):
@@ -111,6 +119,7 @@ async def users(event):
     help_str = "**Hello, These Are Some Commands...** \n\n➤ /start - Check if I am Alive \n➤ /ping - Check Ping Speed! \n➤ /trt <lang-code> - Translate given word. \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Check if Im Alive! \n➤ /ban - Works In Group , Bans A User. \n➤ /unban - Unbans A User in Group \n➤ /promote - Promotes A User \n➤ /demote - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot \n\nYou Can Change Bot Trigger by `.set var BOT_TRIGGER ^your_trigger` \n**[ NOTE ]** ' ^ ' is mandatory."
     await tgbot.send_message(event.chat_id, help_str)
 
+#____________________HELLBOT__________________
 
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def all_messages_catcher(event):
@@ -129,12 +138,13 @@ async def all_messages_catcher(event):
             )
         except telethon.errors.rpcerrorlist.UserNotParticipantError:
             await event.reply(f"**ERROR!!** \n__I Couldn't Forward That Message To My Master. Please Join My Channel First And Then Try Again!__",
-                             buttons = [Button.url("😉 Join Channel 😉", Config.FORCE_CHANNEL_USERNAME)])
+                             buttons = [Button.url("😉 Join Channel 😉", Config.FORCE_CHANNEL_UN)])
             return
     await event.get_sender()
     master = await event.forward_to(bot.uid)
     add_me_in_db(master.id, event.sender_id, event.id)
 
+#____________________HELLBOT__________________
 
 @tgbot.on(events.NewMessage(func=lambda e: e.is_private))
 async def sed(event):
@@ -164,6 +174,7 @@ async def sed(event):
             reply_to=reply_message_id,
         )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("broadcast", is_args=True)
 @inevitable
@@ -191,6 +202,7 @@ async def retard(event):
         f"🗞️ **Broadcast Done \n✅ Success :-** `{sent_count}` **Group/Users.\n❌ Error :-** `{error_count}` \n📊 **Total Groups/Users :-** `{len(usersto)}`",
     )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("stats", is_args=False)
 @superior
@@ -200,6 +212,7 @@ async def hell_stat(event):
         f"**Stats Of Your Bot** \nTotal Users In Bot => {len(hell_stat)}"
     )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("help", is_args=False)
 @superior
@@ -207,6 +220,7 @@ async def help_string(event):
     help_cmds = "**Hello, These Are Some Commands...** \n\n➤ /start - Check if I am Alive \n➤ /ping - Check Ping Speed! \n➤ /trt <lang-code> - Translate given word. \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Check if Im Alive! \n➤ /ban - Works In Group , Bans A User. \n➤ /unban - Unbans A User in Group \n➤ /promote - Promotes A User \n➤ /demote - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot \n\nYou Can Change Bot Trigger by `.set var BOT_TRIGGER ^your_trigger` \n**[ NOTE ]** ' ^ ' is mandatory."
     await event.reply(help_cmds)
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("block", is_args=False)
 @inevitable
@@ -227,6 +241,7 @@ async def block(event):
             link_preview=False,
             )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("unblock", is_args=False)
 @inevitable
@@ -248,3 +263,5 @@ async def unblock(event):
             caption="Yay!! You have been unblocked by my master now✨✨",
             link_preview=False,
             )
+
+#____________________HELLBOT__________________
