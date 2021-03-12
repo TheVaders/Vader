@@ -1,5 +1,3 @@
-import time
-from datetime import datetime
 from userbot import *
 from hellbot.utils import *
 from userbot.cmdhelp import CmdHelp
@@ -21,8 +19,6 @@ else:
 
 kraken = bot.uid
 
-START_TIME = datetime.now()
-
 PM_IMG = "https://telegra.ph/file/80e5200c615cf0cb57aa9.mp4"
 pm_caption = "__**🔥🔥ɦɛʟʟɮօt ɨs օռʟɨռɛ🔥🔥**__\n\n"
 
@@ -35,8 +31,6 @@ pm_caption += f"🛡️TELETHON🛡️ : `{version.__version__}` \n"
 pm_caption += f"😈Hêllẞø†😈       : __**{hellversion}**__\n"
 
 pm_caption += f"⚜️Sudo⚜️            : `{sudou}`\n"
-
-pm_caption += f"⏳UPTIME⏳     : `{str(datetime.now() - START_TIME).split('.')[0]}`\n"
 
 pm_caption += "⚠️CHANNEL⚠️   : [ᴊᴏɪɴ](https://t.me/HellBot_Official)\n"
 
