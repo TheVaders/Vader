@@ -5,6 +5,8 @@ from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
+#____________________HELLBOT__________________
+
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hêllẞø† Mødê"
 
 ludosudo = Config.SUDO_USERS
@@ -41,8 +43,11 @@ pm_caption += "🔥CREATOR🔥    : [Nub Here](https://t.me/kraken_the_badass)\n
 
 pm_caption += "    [✨REPO✨](https://github.com/hellboy-op/hellbot) 🔹 [📜License📜](https://github.com/HellBoy-OP/HellBot/blob/master/LICENSE)"
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("alive", is_args=False)
 @pitaji
 async def hellboy(event):
     await tgbot.send_file(event.chat_id, PM_IMG, caption=pm_caption)
+
+#____________________HELLBOT__________________
