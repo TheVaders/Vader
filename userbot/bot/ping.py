@@ -3,6 +3,8 @@ from datetime import datetime
 
 START_TIME = datetime.now()
 
+#____________________HELLBOT__________________
+
 @hellbot_cmd("ping", is_args=False)
 @pitaji
 async def _(hell):
@@ -13,3 +15,5 @@ async def _(hell):
         hell.chat_id,
         f"**˜”*°• ρσηg •°*”˜**\n   **✈** Ping:- `{ms}` \n   **✈** Uptime:- `{str(datetime.now() - START_TIME).split('.')[0]}`",
     )
+
+#____________________HELLBOT__________________
