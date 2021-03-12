@@ -4,6 +4,9 @@ import os
 
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+from hellbot.Config import Config
+
+#____________________HELLBOT__________________
 
 @hellbot_cmd("spam", is_args=True)
 @pitaji
@@ -19,6 +22,7 @@ async def spammer(e):
                 LOGGER_GROUP, "#SPAM \n\n" "Spam was executed successfully"
             )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("bigspam", is_args=True)
 @pitaji
@@ -35,6 +39,7 @@ async def bigspam(hell):
                 LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
             )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("mspam", is_args=True)
 @pitaji
@@ -43,7 +48,7 @@ async def tiny_pic_spam(e):
     sender = await e.get_sender()
     me = await e.client.get_me()
 
-    if not sender.id == me.id and not FULL_SUDO:
+    if not sender.id == me.id and not Config.SUDO_USERS:
 
         return await e.reply("`Sorry sudo users cant access this command..`")
 
@@ -81,3 +86,5 @@ async def tiny_pic_spam(e):
         return await e.reply(
             f"**Error**\nUsage `!mspam <count> reply to a sticker/gif/photo/video`"
         )
+
+#____________________HELLBOT__________________
