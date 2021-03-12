@@ -6,6 +6,8 @@ from deep_translator import GoogleTranslator
 from googletrans import LANGUAGES
 from langdetect import detect
 
+#____________________HELLBOT__________________
+
 @hellbot_cmd("trt", is_args=True)
 async def _(hell):
     input_str = hell.pattern_match.group(1)
@@ -40,3 +42,5 @@ async def _(hell):
         await tgbot.send_message(hell.chat_id, output_str)
     except Exception:
         await tgbot.send_message(hell.chat_id, "Something Went Wrong 🤔")
+
+#____________________HELLBOT__________________
