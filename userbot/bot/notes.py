@@ -9,10 +9,14 @@ from hellbot.bot.sql_helper.snips_sql import (
     remove_snip,
 )
 
+#____________________HELLBOT__________________
+
 TYPE_TEXT = 0
 TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 hell_logo = "./KRAKEN/hellbot_logo.jpg"
+
+#____________________HELLBOT__________________
 
 @tgbot.on(events.NewMessage(pattern=r"\?(\S+)"))
 async def on_snip(event):
@@ -40,6 +44,7 @@ async def on_snip(event):
             event.chat_id, snip.reply, reply_to=message_id, file=media
         )
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("addnote", is_args=True)
 @superior 
@@ -74,6 +79,7 @@ async def _(event):
     else:
         await event.reply("Reply to a message with `snips keyword` to save the snip")
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("notes", is_args=True)
 @superior
@@ -100,6 +106,7 @@ async def on_snip_list(event):
     else:
         await event.reply(OUT_STR)
 
+#____________________HELLBOT__________________
 
 @hellbot_cmd("rmnote", is_args="snips")
 @superior
@@ -107,3 +114,5 @@ async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
     await event.reply(f"Note ?{name} deleted successfully")
+
+#____________________HELLBOT__________________
