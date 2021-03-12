@@ -45,7 +45,7 @@ async def start(event):
             where,
             message=f"✨✨ Hello My Pero Master, It's {bot_id}, Your Personal Bot! Lemme Know If You Want Something That I Can Do 🙃🙃",
             buttons=[
-                [custom.Button.inline("⚡ Bot Users" ⚡, data="bot_users")],
+                [custom.Button.inline("⚡ Bot Users ⚡", data="bot_users")],
                 [custom.Button.inline("✨ Help Cmds ✨", data="gibcmd")],
                 [
                     Button.url(
