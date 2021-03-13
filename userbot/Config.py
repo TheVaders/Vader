@@ -129,6 +129,7 @@ if ENV:
             t_file = open(TMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
             t_file.write(AUTH_TOKEN_DATA)
             t_file.close()
+
         CUSTOM_STICKER_PACK_NAME = os.environ.get("CUSTOM_STICKER_PACK_NAME", None)
         YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
         GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
@@ -137,6 +138,7 @@ if ENV:
         #alive
         ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
         ALIVE_MSG = os.environ.get("ALIVE_MSG", None)
+        BOT_PIC = os.environ.get("BOT_PIC", None)
         #auto bio
         BIO_MSG = os.environ.get("BIO_MSG", None)
         #Lydia API
@@ -146,6 +148,12 @@ if ENV:
             "UPSTREAM_REPO", "https://github.com/HellBoy-OP/HellBot"
         )
         STRING_SESSION = os.environ.get("STRING_SESSION", None)
+        BOT_MODE = os.environ.get("BOT_MODE", "ON")
+        BOT_TRIGGER = os.environ.get("BOT_TRIGGER", "^/")
+        BOTMODE_LOG = int(os.environ.get("BOTMODE_LOG", False))
+        FORCE_SUB = os.environ.get("FORCE_SUB", None)
+        FORCE_CHANNEL_UN = os.environ.get("FORCE_CHANNEL_UN", None)
+        FORCE_CHANNEL_ID = int(os.environ.get("FORCE_CHANNEL_ID", False))
         EXTRA_HELLBOT = os.environ.get("EXTRA_HELLBOT", -1001221881562)
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
 

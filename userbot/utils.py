@@ -22,6 +22,7 @@ from var import Var
 
 from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
 from userbot.helpers.exceptions import CancelProcess
+from userbot.helpers.tools import *
 from userbot.Config import Config
 
 ENV = bool(os.environ.get("ENV", False))
@@ -30,7 +31,7 @@ if ENV:
 else:
     if os.path.exists("config.py"):
         from config import Development as Config
-
+bothandler = Config.BOT_TRIGGER
 
 
 def load_module(shortname):
@@ -60,6 +61,11 @@ def load_module(shortname):
         # support for uniborg
         sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
+        mod.no_grp = no_grp()
+        mod.pm_limit = pm_limit()
+        mod.if_bot = if_bot()
+        mod.iadmin = iadmin()
+        mod.forwards = forwards()
         mod.borg = bot
         mod.hellbot = bot
         mod.edit_or_reply = edit_or_reply
@@ -98,8 +104,8 @@ def admin_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
+    file_master = Path(previous_stack_frame.filename)
+    file_master = file_master.stem.replace(".py", "")
     allow_sudo = args.get("allow_sudo", False)
     # get the pattern from the decorator
     if pattern is not None:
@@ -110,9 +116,9 @@ def admin_cmd(pattern=None, command=None, **args):
             args["pattern"] = re.compile(pattern)
             cmd = pattern.replace("$", "").replace("^", "").replace("\\", "")
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_LIST[file_master].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_LIST.update({file_master: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
                 hellreg = "^" + Config.COMMAND_HAND_LER
@@ -128,9 +134,9 @@ def admin_cmd(pattern=None, command=None, **args):
                     (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
                 )
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_LIST[file_master].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_LIST.update({file_master: [cmd]})
 
     args["outgoing"] = True
     # should this command be available for other users?
@@ -163,8 +169,8 @@ def sudo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
+    file_master = Path(previous_stack_frame.filename)
+    file_master = file_master.stem.replace(".py", "")
     allow_sudo = args.get("allow_sudo", False)
     # get the pattern from the decorator
     if pattern is not None:
@@ -175,9 +181,9 @@ def sudo_cmd(pattern=None, command=None, **args):
             args["pattern"] = re.compile(pattern)
             cmd = pattern.replace("$", "").replace("^", "").replace("\\", "")
             try:
-                SUDO_LIST[file_test].append(cmd)
+                SUDO_LIST[file_master].append(cmd)
             except BaseException:
-                SUDO_LIST.update({file_test: [cmd]})
+                SUDO_LIST.update({file_master: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
                 hellreg = "^" + Config.SUDO_COMMAND_HAND_LER
@@ -193,9 +199,9 @@ def sudo_cmd(pattern=None, command=None, **args):
                     (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
                 )
             try:
-                SUDO_LIST[file_test].append(cmd)
+                SUDO_LIST[file_master].append(cmd)
             except BaseException:
-                SUDO_LIST.update({file_test: [cmd]})
+                SUDO_LIST.update({file_master: [cmd]})
     args["outgoing"] = True
     # should this command be available for other users?
     if allow_sudo:
@@ -480,8 +486,8 @@ def register(**args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
+    file_master = Path(previous_stack_frame.filename)
+    file_master = file_master.stem.replace(".py", "")
     pattern = args.get("pattern", None)
     disable_edited = args.get("disable_edited", True)
     allow_sudo = args.get("allow_sudo", False)
@@ -502,9 +508,9 @@ def register(**args):
                 pass
 
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_LIST[file_master].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_LIST.update({file_master: [cmd]})
         except BaseException:
             pass
 
@@ -529,9 +535,9 @@ def register(**args):
             bot.add_event_handler(func, events.MessageEdited(**args))
         bot.add_event_handler(func, events.NewMessage(**args))
         try:
-            LOAD_PLUG[file_test].append(func)
+            LOAD_PLUG[file_master].append(func)
         except Exception:
-            LOAD_PLUG.update({file_test: [func]})
+            LOAD_PLUG.update({file_master: [func]})
         return func
 
     return decorator
@@ -542,8 +548,8 @@ def command(**args):
 
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
+    file_master = Path(previous_stack_frame.filename)
+    file_master = file_master.stem.replace(".py", "")
 
     pattern = args.get("pattern", None)
     allow_sudo = args.get("allow_sudo", None)
@@ -568,9 +574,9 @@ def command(**args):
             except BaseException:
                 pass
             try:
-                CMD_LIST[file_test].append(cmd)
+                CMD_LIST[file_master].append(cmd)
             except BaseException:
-                CMD_LIST.update({file_test: [cmd]})
+                CMD_LIST.update({file_master: [cmd]})
         except BaseException:
             pass
     if allow_sudo:
@@ -596,9 +602,196 @@ def command(**args):
             bot.add_event_handler(func, events.MessageEdited(**args))
         bot.add_event_handler(func, events.NewMessage(**args))
         try:
-            LOAD_PLUG[file_test].append(func)
+            LOAD_PLUG[file_master].append(func)
         except BaseException:
-            LOAD_PLUG.update({file_test: [func]})
+            LOAD_PLUG.update({file_master: [func]})
         return func
 
     return decorator
+
+def hellbot_cmd(add_cmd, is_args=False):
+    def cmd(func):
+        op_hellbot = bot.tgbot
+        if is_args:
+            pattern = bothandler + add_cmd + "(?: |$)(.*)"
+        elif is_args == "hellboy":
+            pattern = bothandler + add_cmd + " (.*)"
+        elif is_args == "supp":
+            pattern = bothandler + add_cmd
+        elif is_args == "flys":
+            pattern = bothandler + add_cmd + " (\S+)"
+        else:
+            pattern = bothandler + add_cmd + "$"
+        op_hellbot.add_event_handler(
+            func, events.NewMessage(incoming=True, pattern=pattern)
+        )
+
+    return cmd
+
+def is_admin():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            op_hellbot = bot.tgbot
+            myperm = await op_hellbot.get_permissions(event.chat_id, event.sender_id)
+            user = event.sender_id
+            hellid = bot.uid
+            if myperm.is_admin:
+                await func(event)
+            if event.sender_id == hellid:
+                pass
+            elif not user:
+                pass
+            if not myperm.is_admin:
+                await event.reply("Only admins can use this. Keep your ass out of it...")
+
+        return wrapper
+
+    return decorator
+
+
+def admin_bot():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            op_hellbot = bot.tgbot
+            myid = await op_hellbot.get_me()
+            myperm = await op_hellbot.get_permissions(event.chat_id, myid)
+            if myperm.is_admin:
+                await func(event)
+            else:
+                await event.reply("I'm not admin. Chutíya sala...")
+
+        return wrapper
+
+    return decorator
+
+
+def superior():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            ludo = list(Config.SUDO_USERS)
+            ludo.append(bot.uid)
+            if event.sender_id in ludo:
+                await func(event)
+            else:
+                await event.reply("This Command Is Meant To Be Used By Owners & Sudo Users Only...")
+
+        return wrapper
+
+    return decorator
+
+
+def inevitable():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            baap = bot.uid
+            if event.sender_id == baap:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def group_cmd():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                await event.reply("This Command Only Works In Groups. Please try again in a Group")
+
+        return wrapper
+
+    return decorator
+
+
+def grouponly():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def pitaji():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            ludo = list(Config.SUDO_USERS)
+            ludo.append(bot.uid)
+            if event.sender_id in ludo:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
+
+def private_cmd():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            if event.is_group:
+                pass
+            else:
+                await func(event)
+
+        return wrapper
+
+    return decorator
+
+
+def start_bot(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/bot/{shortname}.py")
+        name = "userbot/plugins/bot.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        LOGS.info("!!! Initiating BOT MODE !!!")
+        LOGS.info("Bot Mode Sucessfully imported " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/bot/{shortname}.py")
+        name = "userbot/plugins/bot.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        mod.op_hellbot = bot.tgbot
+        mod.hellbot_cmd = hellbot_cmd
+        mod.inevitable = inevitable()
+        mod.group_cmd = group_cmd()
+        mod.superior = superior()
+        mod.pro_only = superior()
+        mod.grouponly = grouponly()
+        mod.admin_bot = admin_bot()
+        mod.is_admin = is_admin()
+        mod.pitaji = pitaji()
+        mod.private_cmd = private_cmd()
+        spec.loader.exec_module(mod)
+        sys.modules["userbot/plugins/bot" + shortname] = mod
+        LOGS.info("Bot Mode Has imported " + shortname)
