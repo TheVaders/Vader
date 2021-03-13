@@ -1,6 +1,6 @@
 from sqlalchemy import Column, LargeBinary, Numeric, UnicodeText
 
-from hellbot.bot.sql_helper import BASE, SESSION
+from hellbot.plugins.sql_helper import BASE, SESSION
 
 
 class Snips(BASE):
