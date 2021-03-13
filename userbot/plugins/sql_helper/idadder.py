@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from . import BASE, SESSION
+from hellbot.plugins.sql_helper import BASE, SESSION
 
 
 class Moidata(BASE):
