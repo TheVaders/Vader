@@ -49,7 +49,7 @@ for name in files:
         load_module(shortname.replace(".py", ""))
 
 if Config.BOT_MODE == "ON":
-    path = "userbot/bot/*.py"
+    path = "userbot/plugins/bot/*.py"
     files = glob.glob(path)
     for name in files:
         with open(name) as f:
