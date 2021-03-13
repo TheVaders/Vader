@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from hellbot.bot.sql_helper import BASE, SESSION
+from hellbot.plugins.sql_helper import BASE, SESSION
 
 
 class Users(BASE):
