@@ -104,7 +104,7 @@ async def users(event):
                 event.chat_id,
                 tedt_file,
                 force_document=True,
-                thumb=hell_logo
+                thumb=hell_logo,
                 caption="Total Users In Your Bot.",
                 allow_cache=False,
             )
