@@ -2,7 +2,7 @@ from telethon import events, utils
 from telethon.tl import types
 
 from hellbot.Config import Config
-from hellbot.plugins.sql_helper.snips_sql import (
+from hellbot.plugins.sql_helper.snip_sql import (
     add_snip,
     get_all_snips,
     get_snips,
