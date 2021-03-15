@@ -5,7 +5,10 @@ Audio and video downloader using Youtube-dl
 .yta To Download in mp3 format
 .ytv To Download in mp4 format
 """
-
+import re
+import random
+import json
+from pathlib import Path
 import asyncio
 import math
 import os
@@ -14,6 +17,7 @@ import time
 from telethon.tl.types import DocumentAttributeAudio
 from hellbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from youtube_search import YoutubeSearch
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
     ContentTooShortError,
@@ -217,8 +221,28 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp4")
         await v_url.delete()
 
-CmdHelp("ytdl").add_command(
+
+@bot.on(admin_cmd(pattern="ytlink ?(.*)"))
+@bot.on(sudo_cmd(pattern="ytlink ?(.*)", allow_sudo=True))
+async def hmm(ytwala):
+    query = ytwala.pattern_match.group(1)
+    if not query:
+        await edit_or_reply(ytwala, "`Enter query to search`")
+    await edit_or_reply(ytwala, "`Processing...`")
+    try:
+        results = json.loads(YoutubeSearch(query, max_results=7).to_json())
+    except KeyError:
+        return await edit_or_reply(ytwala, "Unable to find relevant search queries...")
+    output = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n"
+    for i in results["videos"]:
+        output += (f"--> `{i['title']}`\nhttps://www.youtube.com{i['url_suffix']}\n\n")
+    await edit_or_reply(ytwala, output, link_preview=False)
+
+
+CmdHelp("youtube").add_command(
   "yta", "<yt link>", "Extracts the audio from given youtube link and uploads it to telegram"
 ).add_command(
   "ytv", "<yt link>", "Extracts the video from given youtube link and uploads it to telegram"
+).add_command(
+  "ytlink", "<search keyword>", "Extracts 7 links from youtube based on the given search query"
 ).add()
