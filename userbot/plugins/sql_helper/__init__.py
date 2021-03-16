@@ -6,10 +6,11 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 # the secret configuration specific things
 from var import Var
+from hellbot.Config import Config
 
 
 def start() -> scoped_session:
-    engine = create_engine(Var.DB_URI)
+    engine = create_engine(Config.DB_URI)
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
     return scoped_session(sessionmaker(bind=engine, autoflush=False))
