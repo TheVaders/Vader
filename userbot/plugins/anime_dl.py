@@ -36,7 +36,7 @@ async def _(event):
 
 @bot.on(admin_cmd(pattern="ganime ?(.*)"))
 @bot.on(sudo_cmd(pattern="ganime ?(.*)", allow_sudo=True))
-async def _(event):
+async def _g(event):
     try:
        await event.client(ImportChatInviteRequest('VlC_xPZHL9LXUsMn'))
     except UserAlreadyParticipantError:
