@@ -34,6 +34,36 @@ async def _(event):
              return
     await event.client.delete_messages(current_chat, current_msg)
 
+@bot.on(admin_cmd(pattern="ganime ?(.*)"))
+@bot.on(sudo_cmd(pattern="ganime ?(.*)", allow_sudo=True))
+async def _(event):
+    try:
+       await event.client(ImportChatInviteRequest('VlC_xPZHL9LXUsMn'))
+    except UserAlreadyParticipantError:
+        pass
+    except:
+        await event.reply("You need to join [this](https://t.me/joinchat/VlC_xPZHL9LXUsMn) channel for this module to work.", link_preview=False)
+        return
+    args = event.pattern_match.group(1)
+    if not args:
+        await event.edit("`Enter anime name`")
+        return
+    chat = -1001307222870
+    current_chat = event.chat_id
+    current_msg = event.id
+    try:
+       async for event in event.client.iter_messages(chat, search=args, limit=1):
+                    await bot.forward_messages(current_chat, event)
+    except:
+             await event.reply("`Anime not found. Make sure you give correct name`")
+             return
+    await event.client.delete_messages(current_chat, current_msg)
+
+
 CmdHelp("anime_dl").add_command(
   "animehub", "<anime name>", "Gives the download link of searched anime. Note that search query should be perfectly spelled. Check .anilist <anime name> to get info about that anime and their perfect spelling"
+).add_command(
+  "ganime", "<anime name>", "Gives the download link of searched anime in GDrive. If <.animehub> fails try this."
+).add_info(
+  "Anime Downloader"
 ).add()
