@@ -60,8 +60,8 @@ async def _g(event):
     await event.client.delete_messages(current_chat, current_msg)
 
 
-@bot.on(admin_cmd(pattern="getanime ?(.*)"))
-@bot.on(sudo_cmd(pattern="getanime ?(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="animedl ?(.*)"))
+@bot.on(sudo_cmd(pattern="animedl ?(.*)", allow_sudo=True))
 async def _get(event):
     try:
        await event.client(ImportChatInviteRequest('VlC_xPZHL9LXUsMn'))
@@ -117,7 +117,7 @@ CmdHelp("anime_dl").add_command(
 ).add_command(
   "ganime", "<anime name>", "Gives the download link of searched anime in GDrive. If <.animehub> fails try this."
 ).add_command(
-  "getanime", "<anime name>", "Gives the download link of searched anime in telegram channels link. Easy to download links."
+  "animedl", "<anime name>", "Gives the download link of searched anime in telegram channels link. Easy to download links."
 ).add_command(
   "ecchi", "<anime name>", "Gives the download link of searched ecchi anime."
 ).add_info(
