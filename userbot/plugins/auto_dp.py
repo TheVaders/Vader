@@ -45,7 +45,7 @@ COLLECTION_STRING3 = [
 COLLECTION_STRING4 = [
     "pokemon-serena-wallpaper",
     "anime-girls-wallpapers",
-    "sexy-anime-gilr-wallpaper",
+    "anime-girls",
     "cute-anime-girl-3d-wallpaper-2018",
     "ash-serena-love-wallpaper",
     "anime-girls-wallpapers",
