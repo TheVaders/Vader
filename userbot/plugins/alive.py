@@ -1,7 +1,3 @@
-
-
-
-
 from userbot import *
 from hellbot.utils import *
 from userbot.cmdhelp import CmdHelp
@@ -59,4 +55,6 @@ CmdHelp("alive").add_command(
   'alive', None, 'Check weather the bot is alive or not'
 ).add_command(
   'hell', None, 'Check weather the bot is alive or not. In your custom Alive Pic and Alive Msg'
+).add_info(
+  'Zinda Hai Kya Bro?'
 ).add()
