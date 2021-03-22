@@ -52,6 +52,7 @@ pybase64>=0.4.0
 pyfiglet
 pylast
 pymongo
+pyrogram==1.1.13
 python-barcode
 python-dotenv
 python-magic
