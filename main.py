@@ -4,9 +4,6 @@ import time
 
 from telethon import events, TelegramClient
 
-from userbot import bot
-from userbot.utils import admin_cmd
-
 try:
   from pyrogram import Client, idle
 except:
