@@ -33,6 +33,7 @@ async def _(event):
             )
             await conv.send_message(f"/qcolor {hell}")
             await conv.get_response()
+            await asyncio.sleep(2)
             await bot.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
