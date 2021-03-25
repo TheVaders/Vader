@@ -13,17 +13,14 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await edit_or_reply(event, "```Reply to any user message.```")
+        await edit_or_reply(event, "```Reply to any user's message.```")
         return
     reply_message = await event.get_reply_message()
-    if not reply_message.text:
-        await edit_or_reply(event, "```Reply to text message```")
-        return
     hell = event.pattern_match.group(1)
     chat = "@QuotLyBot"
     reply_message.sender
     if reply_message.sender.bot:
-        await edit_or_reply(event, "```Reply to actual users message.```")
+        await edit_or_reply(event, "```Reply to actual user's message.```")
         return
     await edit_or_reply(event, "```Making a Quote```")
     async with bot.conversation(chat) as conv:
@@ -33,14 +30,14 @@ async def _(event):
             )
             await conv.send_message(f"/qcolor {hell}")
             await conv.get_response()
-            await asyncio.sleep(2)
+            await asyncio.sleep(1)
             await bot.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
             await event.reply("```Please unblock @QuotLyBot and try again```")
             return
         if response.text.startswith("Hi!"):
-            await edit_or_reply(event, "```Can you kindly disable your forward privacy settings for good?```"
+            await edit_or_reply(event, "```Can you kindly disable your forward privacy settings.```"
             )
         else:
             await event.delete()
@@ -48,7 +45,7 @@ async def _(event):
 
 
 CmdHelp("qbot").add_command(
-  "ss", "<reply to a text msg> <bg colour>", "Makes the sticker of the replied text message.", "ss black <reply to a text msg>"
+  "ss", "<reply to msg> <bg colour>", "Makes the sticker of the replied text, sticker, pic.", "ss black <reply to a msg>"
 ).add_info(
-  "Makes Quote Of Replied Text"
+  "Makes Quote Of Replied Text / Sticker / pic."
 ).add()
