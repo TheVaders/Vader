@@ -1,8 +1,3 @@
-""" Google Translate
-Available Commands:
-.trt LanguageCode as reply to a message
-.trt LangaugeCode | text to translate"""
-
 import emoji
 from googletrans import Translator
 
@@ -51,7 +46,7 @@ async def _(event):
 async def _(hell):
     if hell.fwd_from:
         return
-    await edit_or_reply(hell, "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/%F0%9D%95%B1-%F0%9D%95%BE-%F0%9D% NB95%B1--H%C3%A8ll%E1%BA%9E%C3%B8y-%F0%90%8C%B7%F0%90%8C%B4%E0%A0%8B%E0%A0%8B%F0%90%8C%B1%F0%90%8D%88%F0%90%8C%B8-%F0%90%8C%BE%F0%90%8C%B0%F0%90%8D%80%F0%90%8C%BE-B%E3%83%A0JRANGD%E3%83%A0L-12-04) ⚡")
+    await edit_or_reply(hell, "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/๖IGNIS乛-𐌰𐌽𐌰𐌽𐌳--ƒαkyeωσyaℓ-03-28) ⚡")
 
 
 
