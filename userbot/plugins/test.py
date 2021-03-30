@@ -1,4 +1,4 @@
-# Credit To @Kraken_The_BadASS . Keep credit if you are going to edit it. Join @HellBot_Official
+# Credit To @SupRemE_AnanD . Keep credit if you are going to edit it. Join @HellBot_Official
 
 
 import asyncio

@@ -32,7 +32,7 @@ print(Style.BRIGHT + Fore.BLUE + logo)
 print(Style.RESET_ALL)
 print(Style.BRIGHT + Fore.CYAN + Back.BLUE + baap_bolte)
 print(Style.RESET_ALL)
-print("""Welcome To HellBot String Generator By @Kraken_The_BadASS""")
+print("""Welcome To HellBot String Generator By @SupRemE_AnanD""")
 print("""Kindly Enter Your Details To Continue ! """)
 
 API_KEY = input("API_KEY: ")

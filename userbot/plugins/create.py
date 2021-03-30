@@ -1,4 +1,4 @@
-# Made By @Kraken_The_BadASS
+# Made By @SupRemE_AnanD
 # Keep Credits else gay....
 
 """Create Private Groups

@@ -1,4 +1,4 @@
-# Added more fonts by @Kraken_The_BadASS
+# Added more fonts by @SupRemE_AnanD
 # Ported from saitama i guess
 
 from hellbot.utils import admin_cmd, sudo_cmd, edit_or_reply

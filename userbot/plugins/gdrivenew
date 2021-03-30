@@ -12,7 +12,7 @@ Syntax:
 # there might be some changes made to suit the needs for this repository
 # Licensed under MIT License
 # Fixed By @StarkxD
-# Added sudo_cmd and fixed bugs by @Kraken_The_BadASS
+# Added sudo_cmd and fixed bugs by @SupRemE_AnanD
 
 import asyncio
 import json

@@ -70,7 +70,7 @@ async def animepp():
 async def main(event):
     await event.edit(
         "**Starting Profile Pic Runner by @HellBot_Official..**"
-    )  # Owner @Kraken_The_BadASS
+    )  # Owner @SupRemE_AnanD
     while True:
         try:
             await animepp()
