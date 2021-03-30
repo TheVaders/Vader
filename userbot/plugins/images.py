@@ -5,7 +5,7 @@
 import os
 import shutil
 
-from userbot.google_imgs import googleimagesdownload
+from hellbot.helpers.google_imgs import googleimagesdownload
 from hellbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.Config import Config
 
