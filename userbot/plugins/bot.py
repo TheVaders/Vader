@@ -1,6 +1,3 @@
-"""Available Commands:
-.mf"""
-
 import asyncio
 import os
 import re
