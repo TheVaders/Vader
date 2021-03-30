@@ -88,7 +88,7 @@ async def gban(userbot):
     except:
         return await hellbot.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 924138714:
+        if user.id == 1347610095:
             return await hellbot.edit(
                 f"`First Grow Some Balls To Gban My Creater🤫🚶`"
             )
@@ -156,7 +156,7 @@ async def gunban(userbot):
     except:
         return await hellbot.edit("**Som3ting W3nt Wr0ng**")
     if user:
-        if user.id == 924138714:
+        if user.id == 1347610095:
             return await hellbot.edit("**You need to grow some balls to gban / ungban my creator**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
