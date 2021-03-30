@@ -27,7 +27,7 @@ bot = "@MissRose_bot"
 hell_logo = "./KRAKEN/hellbot_logo.jpg"
 # Keep all credits pls
 # madewith great effort by @HeisenbergTheDanger
-# modified by @kraken_the_badass for fbans
+# modified by @SupRemE_AnanD for fbans
 
 
 @hellbot.on(admin_cmd(pattern="fban ?(.*)"))

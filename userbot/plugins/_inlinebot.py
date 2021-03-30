@@ -1,4 +1,4 @@
-#    Copyright (C) @kraken_the_badass 2021-2022
+#    Copyright (C) @SupRemE_AnanD 2021-2022
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -12,7 +12,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 #
-#    This Inline Helper Code is solely owned by @kraken_the_badass
+#    This Inline Helper Code is solely owned by @SupRemE_AnanD
 #    You Should Not Copy This Code Without Proper Permission.
 
 from math import ceil

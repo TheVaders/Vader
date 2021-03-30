@@ -34,7 +34,7 @@ pm_caption += f"⚜️Sudo⚜️            : `{sudou}`\n"
 
 pm_caption += "⚠️CHANNEL⚠️   : [ᴊᴏɪɴ](https://t.me/HellBot_Official)\n"
 
-pm_caption += "🔥CREATOR🔥    : [Nub Here](https://t.me/kraken_the_badass)\n\n"
+pm_caption += "🔥CREATOR🔥    : [Nub Here](https://t.me/SupRemE_AnanD)\n\n"
 
 pm_caption += "    [✨REPO✨](https://github.com/hellboy-op/hellbot) 🔹 [📜License📜](https://github.com/HellBoy-OP/HellBot/blob/master/LICENSE)"
 
