@@ -230,9 +230,9 @@ async def ban(bon):
         await hellevent.edit("`I ain't got msg deleting right. But still Banned!`")
         return
     if reason:
-        await hellevent.edit(f"`{str(user.id)}` is banned !!\nReason: {reason}")
+        await hellevent.edit(f"**📣 Banned** [{user.first_name}](tg://user?id={user.id} **in** {bon.chat.title} 📣!!\n**Reason:** `{reason}`")
     else:
-        await hellevent.edit(f"{str(user.id)} is banned😏 !!")
+        await hellevent.edit(f"**📣 Banned** [{user.first_name}](tg://user?id={user.id} **in** {bon.chat.title} 📣!!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
