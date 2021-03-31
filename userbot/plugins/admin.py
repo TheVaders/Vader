@@ -230,9 +230,9 @@ async def ban(bon):
         await hellevent.edit("`I ain't got msg deleting right. But still Banned!`")
         return
     if reason:
-        await hellevent.edit(f"**📣 Banned** [{user.first_name}](tg://user?id={user.id} **in** {bon.chat.title} 📣!!\n**Reason:** `{reason}`")
+        await hellevent.edit(f"**📣 Banned** [{user.first_name}](tg://user?id={user.id}) **in** {bon.chat.title} 📣!!\n**Reason:** `{reason}`")
     else:
-        await hellevent.edit(f"**📣 Banned** [{user.first_name}](tg://user?id={user.id} **in** {bon.chat.title} 📣!!")
+        await hellevent.edit(f"**📣 Banned** [{user.first_name}](tg://user?id={user.id}) **in** {bon.chat.title} 📣!!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -261,7 +261,7 @@ async def nothanos(unbon):
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await hellevent.edit("```Unbanned Successfully. Granting another chance🚶.```")
+        await hellevent.edit("[{user.first_name}](tg://user?id={user.id}) **Was Unbanned Successfully. Granting another chance🚶**")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
