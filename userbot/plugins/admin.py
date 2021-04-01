@@ -261,7 +261,7 @@ async def nothanos(unbon):
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await hellevent.edit("[{user.first_name}](tg://user?id={user.id}) **Was Unbanned Successfully. Granting another chance🚶**")
+        await hellevent.edit(f"[{user.first_name}](tg://user?id={user.id}) **Was Unbanned Successfully. Granting another chance🚶**")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
