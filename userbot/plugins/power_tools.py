@@ -13,11 +13,11 @@ from hellbot import HEROKU_APP, bot
 async def _(event):
     if event.fwd_from:
         return
-    hell = await eor(event, "Restarting **[ ░░░ ]** ...\nType `.ping` to check if I am working...")
-    await hell.edit("Restarting **[ █░░ ]** ...\nType `.ping` to check if I am working...")
-    await hell.edit("Restarting **[ ██░ ]** ...\nType `.ping` to check if I am working...")
-    await hell.edit("Restarting **[ ███ ]** ...\nType `.ping` to check if I am working...")
-    await hell.edit("Restarted **[ ✓ ]** ...\nType `.ping` to check if I am working...")
+    await eor(event, "Restarting **[ ░░░ ]** ...\nType `.ping` to check if I am working...")
+    await eor(event, "Restarting **[ █░░ ]** ...\nType `.ping` to check if I am working...")
+    await eor(event, "Restarting **[ ██░ ]** ...\nType `.ping` to check if I am working...")
+    await eor(event, "Restarting **[ ███ ]** ...\nType `.ping` to check if I am working...")
+    await eor(event, "Restarted  **[  ✓  ]** ...\nType `.ping` to check if I am working...")
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
