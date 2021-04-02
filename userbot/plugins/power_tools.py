@@ -13,11 +13,11 @@ from hellbot import HEROKU_APP, bot
 async def _(event):
     if event.fwd_from:
         return
-    hell = await eor(event, "Restarting **[ ░░░ ]** ...\nType `.ping` or to check if I am working 🙂")
-    await hell.edit("Restarting **[ █░░ ]** ...\nType `.ping` or to check if I am working 🙂")
-    await hell.edit("Restarting **[ ██░ ]** ...\nType `.ping` or to check if I am working 🙂")
-    await hell.edit("Restarting **[ ███ ]** ...\nType `.ping` or to check if I am working 🙂")
-    await hell.edit("Restarted **[ ✓ ]** ...\nType `.ping` to check if I am working 🙂")
+    hell = await eor(event, "Restarting **[ ░░░ ]** ...\nType `.ping` to check if I am working...")
+    await hell.edit("Restarting **[ █░░ ]** ...\nType `.ping` to check if I am working...")
+    await hell.edit("Restarting **[ ██░ ]** ...\nType `.ping` to check if I am working...")
+    await hell.edit("Restarting **[ ███ ]** ...\nType `.ping` to check if I am working...")
+    await hell.edit("Restarted **[ ✓ ]** ...\nType `.ping` to check if I am working...")
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
@@ -37,4 +37,6 @@ CmdHelp("power_tools").add_command(
   "restart", None, "Restarts your userbot. Redtarting Bot may result in better functioning of bot when its laggy"
 ).add_command(
   "shutdown", None, "Turns off Dynos of Userbot. Userbot will stop working unless you manually turn it on from heroku"
+).add_info(
+  "Power Switch For Bot"
 ).add()
