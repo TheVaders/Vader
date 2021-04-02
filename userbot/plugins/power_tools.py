@@ -1,29 +1,23 @@
-"""Restart or Terminate the bot from any chat
-Available Commands:
-.restartsys
-.shutdown"""
-# This Source Code Form is subject to the terms of the GNU
-# General Public License, v.3.0. If a copy of the GPL was not distributed with this
-# file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html
 import os
 import sys
 import asyncio
 from os import execl
 from time import sleep
 
-from hellbot.utils import admin_cmd
-from userbot.cmdhelp import CmdHelp
-from userbot import HEROKU_APP, bot
+from hellbot.utils import admin_cmd, edit_or_reply as eor, sudo_cmd
+from hellbot.cmdhelp import CmdHelp
+from hellbot import HEROKU_APP, bot
 
-@bot.on(admin_cmd(pattern="restart"))
+@bot.on(admin_cmd(pattern="restart$"))
+@bot.on(sudo_cmd(pattern="restart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Restarting **[ ░░░ ]** ...\nType `.ping` or `.help` to check if I am working 🙂")
-    await event.edit("Restarting **[ █░░ ]** ...\nType `.ping` or `.help` to check if I am working 🙂")
-    await event.edit("Restarting **[ ██░ ]** ...\nType `.ping` or `.help` to check if I am working 🙂")
-    await event.edit("Restarting **[ ███ ]** ...\nType `.ping` or `.help` to check if I am working 🙂")
-    await event.edit("Restarted **[ ✓ ]** ...\nType `.ping` or `.help` to check if I am working 🙂")
+    hell = await eor(event, "Restarting **[ ░░░ ]** ...\nType `.ping` or to check if I am working 🙂")
+    await hell.edit("Restarting **[ █░░ ]** ...\nType `.ping` or to check if I am working 🙂")
+    await hell.edit("Restarting **[ ██░ ]** ...\nType `.ping` or to check if I am working 🙂")
+    await hell.edit("Restarting **[ ███ ]** ...\nType `.ping` or to check if I am working 🙂")
+    await hell.edit("Restarted **[ ✓ ]** ...\nType `.ping` to check if I am working 🙂")
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
