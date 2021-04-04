@@ -13,9 +13,8 @@ from PIL import Image, ImageColor
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import CMD_HELP
 from hellbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
+from hellbot.cmdhelp import CmdHelp
 
 #==================HellBot==================
 
@@ -257,7 +256,7 @@ async def _(event):
                     event,
                     "Well, Hate to tell yout this but this Currency isn't supported😣 **yet**.\n__Try__ `.currencies` __for a list of supported currencies.__🤐",
                 )
-        except e:
+        except Exception as e:
             await edit_or_reply(event, str(e))
     else:
         await edit_or_reply(
