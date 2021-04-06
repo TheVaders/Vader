@@ -143,7 +143,7 @@ async def _(event):
         "`Connecting To Raj Bhawan`",
         "`Call Connected.`",
         "`Secretary: Hello This is Raj Bhawan. Who is this?`",
-        f"`Me: Hello this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
+        f"`Me: Hello this is` `{DEFAULTUSER}` .Please connect me to Prime Minister",
         "`User Authorised.`",
         "`Calling`  `At +9189*#*#*#56`",
         "`Private  Call Connected...`",
