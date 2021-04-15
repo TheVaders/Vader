@@ -42,6 +42,7 @@ lxml
 lottie
 nekos.py
 oauth2client
+opencv-python--headless
 patool
 psycopg2
 psycopg2-binary
@@ -73,6 +74,7 @@ telethon==1.19.0
 html-telegraph-poster
 urbandict>=0.5
 validators
+vcam
 wikipedia>=1.4.0
 tswift
 youtube-dl>=2021.02.04.1
