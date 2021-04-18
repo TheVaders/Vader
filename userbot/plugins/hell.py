@@ -62,13 +62,12 @@ async def amireallyalive(alive):
     reply_to_id = await reply_id(alive)
 
     if HELL_IMG:
-        hell_caption = f"**{CUSTOM_ALIVE_TEXT}**\n"
-        hell_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
+        hell_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         hell_caption += f"     __**BOT STATUS**__\n\n"
-        hell_caption += f"**★ Telethon version :** `{version.__version__}`\n"
+        hell_caption += f"**★ Telethon :** `{version.__version__}`\n"
         hell_caption += f"**★ HêllBø† :**`{hellversion}`\n"
         hell_caption += f"**★ Uptime :** `{uptime}\n`"
-        hell_caption += f"**★ Master:** {mention}\n"
+        hell_caption += f"**★ Master :** {mention}\n"
         await alive.client.send_file(
             alive.chat_id, HELL_IMG, caption=hell_caption, reply_to=reply_to_id
         )
@@ -77,10 +76,9 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-            f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
             f"      __**BOT STATUS**__\n\n"
-            f"**★ Telethon Version :** `{version.__version__}`\n"
-            f"**★ HêllBø†:** `{hellversion}`\n"
+            f"**★ Telethon :** `{version.__version__}`\n"
+            f"**★ HêllBø† :** `{hellversion}`\n"
             f"**★ Uptime :** `{uptime}\n`"
-            f"**★ Master:** {mention}\n",
+            f"**★ Master :** {mention}\n",
         )
