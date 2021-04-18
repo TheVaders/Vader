@@ -5,7 +5,6 @@ import os
 import heroku3
 import requests
 
-from userbot import CMD_HELP
 from userbot.Config import Config
 from hellbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
@@ -25,9 +24,8 @@ heroku_api = "https://api.heroku.com"
 hell_logo = "./KRAKEN/hellbot_logo.jpg"
 
 
-@borg.on(
-    admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True)
-)
+@bot.on(admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", allow_sudo=True))
 async def variable(var):
     if var.fwd_from:
         return
@@ -48,7 +46,7 @@ async def variable(var):
             variable = var.pattern_match.group(2).split()[0]
             if variable in heroku_var:
                 return await var.edit(
-                    "**ConfigVars**:" f"\n\n`{variable} = {heroku_var[variable]}`\n"
+                    "**ConfigVars** :" f"\n\n`{variable}` = `{heroku_var[variable]}`\n"
                 )
             else:
                 return await var.edit(
@@ -173,11 +171,11 @@ async def dyno_usage(dyno):
         " ➠ `Dyno hours quota remaining this month`:\n"
         f"     ★  `{hours}`**h**  `{minutes}`**m**  "
         f"**|**  [`{percentage}`**%**]"
-        f"** ➠ Total Space: __GB**"
     )
 
 
-@borg.on(admin_cmd(pattern="logs$", outgoing=True))
+@bot.on(admin_cmd(pattern="logs$", outgoing=True))
+@bot.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(dyno):
     if dyno.fwd_from:
         return
