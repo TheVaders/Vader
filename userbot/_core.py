@@ -60,7 +60,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 if shortname in CMD_LIST:
-                    string = "**Commands found in** `{}` (sudo included)\n".format((os.path.basename(downloaded_file_name)))
+                    string = "**Commands found in** `{}`\n".format((os.path.basename(downloaded_file_name)))
                     for i in CMD_LIST[shortname]:
                         string += "  •  `" + i 
                         string += "`\n"
