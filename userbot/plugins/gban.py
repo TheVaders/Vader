@@ -93,7 +93,7 @@ async def gban(userbot):
                 f"`First Grow Some Balls To Gban My Creater🤫🚶`"
             )
         try:
-            from userbot.modules.sql_helper.gmute_sql import gmute
+            from userbot.plugins.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
@@ -159,7 +159,7 @@ async def gunban(userbot):
         if user.id == 1347610095:
             return await hellbot.edit("**You need to grow some balls to gban / ungban my creator**")
         try:
-            from userbot.modules.sql_helper.gmute_sql import ungmute
+            from userbot.plugins.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
