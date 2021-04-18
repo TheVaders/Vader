@@ -145,9 +145,9 @@ async def draw_meme_text(image_path, text):
 
 @bot.on(admin_cmd(pattern="mms ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="mms ?(.*)", allow_sudo=True))
+async def sed(hellboy):
     if hellboy.fwd_from:
         return
-async def sed(hellboy):
     if not hellboy.reply_to_msg_id:
         await eor(hellboy, "You need to reply to an image with .mms` 'text on top' ; 'text on bottom'")
         return
