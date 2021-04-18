@@ -1,8 +1,3 @@
-""" Google Text to Speech
-Available Commands:
-.tts LanguageCode as reply to a message
-.tts LangaugeCode | text to speak"""
-
 import asyncio
 import os
 import subprocess
@@ -11,11 +6,11 @@ from datetime import datetime
 from gtts import gTTS
 
 from hellbot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from hellbot.cmdhelp import CmdHelp
 
 
-@bot.on(admin_cmd(pattern=r"tts (.*)"))
-@bot.on(sudo_cmd(pattern=r"tts (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"txts (.*)"))
+@bot.on(sudo_cmd(pattern=r"txts (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -80,6 +75,8 @@ async def _(event):
     except Exception as e:
         await edit_or_reply(event, str(e))
 
-CmdHelp("tts").add_command(
-  "tts", "<reply to text>/<text>", "Google Text To Speech Module. Alternetive for Voice module. Use .voice if this doesn't work"
+CmdHelp("text_to_speech").add_command(
+  "txts", "<reply to text>/<text>", "Google Text To Speech Module. Alternetive for Voice module. Use .voice if this doesn't work"
+).add_command(
+  "voice", "<reply to text>/<text>", "Same shit.."
 ).add()
