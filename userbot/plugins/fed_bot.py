@@ -30,23 +30,23 @@ hell_logo = "./KRAKEN/hellbot_logo.jpg"
 # modified by @SupRemE_AnanD for fbans
 
 
-@hellbot.on(admin_cmd(pattern="fban ?(.*)"))
-@hellbot.on(sudo_cmd(pattern="fban ?(.*)", allow_sudo=True))
+@hellbot.on(admin_cmd(pattern="broadcast ?(.*)"))
+@hellbot.on(sudo_cmd(pattern="broadcast ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     mssg = await eor(event, "`...`")
     if not event.is_reply:
-        await mssg.edit("Reply to a message to start fban....")
+        await mssg.edit("Reply to a message to start broadcast....")
         return
     channels = get_all_channels()
     error_count = 0
     sent_count = 0
-    await mssg.edit("Fbanning....")
+    await mssg.edit("Broadcasting....")
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.sticker or previous_message.poll:
-            await mssg.edit("**ERROR !** \nOnly Text Message is supported for fban.")
+            await mssg.edit("**ERROR !** \nOnly Text Message is supported for broadcast.")
             return
         if (
             previous_message.gif
@@ -59,7 +59,7 @@ async def _(event):
             or previous_message.geo
             or previous_message.invoice
         ):  # Written by @HeisenbergTheDanger
-            await mssg.edit("**ERROR !** \nOnly Text Message is supported for fban.")
+            await mssg.edit("**ERROR !** \nOnly Text Message is supported for broadcast.")
             return
         if not previous_message.web_preview and previous_message.photo:
             file = await borg.download_file(previous_message.media)
@@ -78,12 +78,12 @@ async def _(event):
 
                     sent_count += 1
                     await mssg.edit(
-                        f"Fbanned : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
+                        f"Broadcasted : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
                     )
                 except Exception as error:
                     try:
                         await borg.send_message(
-                            logs_id, f"Error in Fbanning at {chat_id}."
+                            logs_id, f"Error in Broadcasting at {chat_id}."
                         )
                         await borg.send_message(logs_id, "Error! " + str(error))
                         if (
@@ -91,16 +91,16 @@ async def _(event):
                             == "The message cannot be empty unless a file is provided"
                         ):
                             mssg.edit(
-                                "**ERROR !** \nOnly Text Message is supported for fban."
+                                "**ERROR !** \nOnly Text Message is supported for broadcast."
                             )
                             return
                     except BaseException:
                         pass
                     error_count += 1
                     await mssg.edit(
-                        f"Fbanned : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
+                        f"Broadcasted : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
                     )
-            await mssg.edit(f"{sent_count} fbans with {error_count} errors.")
+            await mssg.edit(f"{sent_count} broadcasts with {error_count} errors.")
             if error_count > 0:
                 try:
                     await borg.send_message(logs_id, f"{error_count} Errors")
@@ -115,12 +115,12 @@ async def _(event):
                     )
                     sent_count += 1
                     await mssg.edit(
-                        f"Fbanned : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
+                        f"Broadcasted : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
                     )
                 except Exception as error:
                     try:
                         await borg.send_message(
-                            logs_id, f"Error in Fbanning at {channel.chat_id}."
+                            logs_id, f"Error in Broadcasting at {channel.chat_id}."
                         )
                         await borg.send_message(logs_id, "Error! " + str(error))
                         if (
@@ -128,21 +128,21 @@ async def _(event):
                             == "The message cannot be empty unless a file is provided"
                         ):
                             mssg.edit(
-                                "**ERROR !** \nOnly Text Message is supported for fban."
+                                "**ERROR !** \nOnly Text Message is supported for broadcast."
                             )
                             return
                     except BaseException:
                         pass
                     error_count += 1
                     await mssg.edit(
-                        f"Fbanned : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
+                        f"Broadcasted : {sent_count}\nError : {error_count}\nTotal : {len(channels)}",
                     )
-            await mssg.edit(f"{sent_count} fbans with {error_count} errors.")
+            await mssg.edit(f"{sent_count} broadcast with {error_count} errors.")
             if error_count > 0:
                 try:
                     await borg.send_message(logs_id, f"{error_count} Errors")
                 except BaseException:
-                    await mssg.edit("Set up heroku var `FBAN_LOGGER_GROUP` for checking errors.")# Written by @HeisenbergTheDanger
+                    await mssg.edit("Set up heroku var `PRIVATE_GROUP_ID` for checking errors.")# Written by @HeisenbergTheDanger
 
 @hellbot.on(admin_cmd(pattern="unfban ?(.*)"))
 @hellbot.on(sudo_cmd(pattern="unfban ?(.*)", allow_sudo=True))
@@ -279,7 +279,7 @@ async def add_ch(event):
             channel_id = lines[line_number][4:-1]
             if not in_channels(channel_id):
                 add_channel(channel_id)
-        await eor(event, "Fban Group added!")
+        await eor(event, "Broadcast Group added!")
         await asyncio.sleep(3)
         await event.delete()
         return
@@ -291,11 +291,11 @@ async def add_ch(event):
         pass
     if not in_channels(chat_id):
         add_channel(chat_id)
-        await eor(event, "`Added to Fban database!`")
+        await eor(event, "`Added to Broadcast database!`")
         await asyncio.sleep(3)
         await event.delete()
     elif in_channels(chat_id):
-        await eor(event, "`Group is already in fban database!`")
+        await eor(event, "`Group is already in Broadcast database!`")
         await asyncio.sleep(3)
         await event.delete()
 
@@ -311,20 +311,20 @@ async def remove_ch(event):
         channels = get_all_channels()
         for channel in channels:
             rm_channel(channel.chat_id)
-        await eor(event, "All Fban Database cleared.")
+        await eor(event, "All Broadcast Database cleared.")
         return
     if in_channels(chat_id):
         rm_channel(chat_id)
-        await eor(event, "Removed from fban database")
+        await eor(event, "Removed from Broadcast database")
         await asyncio.sleep(3)
         await event.delete()
     elif in_channels(event.chat_id):
         rm_channel(event.chat_id)
-        await eor(event, "Removed from fban database")
+        await eor(event, "Removed from Broadcast database")
         await asyncio.sleep(3)
         await event.delete()
     elif not in_channels(event.chat_id):
-        await eor(event, "Group is already removed from fban database. ")
+        await eor(event, "Group is already removed from Broadcast database. ")
         await asyncio.sleep(3)
         await event.delete()
 
@@ -335,20 +335,20 @@ async def list(event):
     if event.fwd_from:
         return
     channels = get_all_channels()
-    msg = "**Groups in fban database:**\n\n"
+    msg = "**Groups in Broadcast database:**\n\n"
     for channel in channels:
         msg += f"=> `{channel.chat_id}`\n"
-    msg += f"\nTotal {len(channels)} fed groups.\n"
-    msg += f"\n**[ NOTE ] :-** Do .fsearch <grp id> to get the details of that grp if added to fban database."
+    msg += f"\nTotal {len(channels)} Broadcast groups.\n"
+    msg += f"\n**[ NOTE ] :-** Do .fsearch <grp id> to get the details of that grp if added to Broadcast database."
     if len(msg) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(msg)) as out_file:
-            out_file.name = "fedgrp.text"
+            out_file.name = "grp.text"
             await borg.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="Fed Groups in database",
+                caption="Broadcast Groups in database",
                 reply_to=event,
             )
             await event.delete()
@@ -461,6 +461,7 @@ async def _(event):
                         caption=f"List of feds {user} has been banned in.\n\n**⚡ [Collected using Hêllẞø†](t.me/hellbot_official) ⚡**",
                     )
                 else:
+                    await asyncio.sleep(5)
                     await borg.send_message(event.chat_id, massive.text)
                 await event.delete()
             except YouBlockedUserError:
@@ -485,21 +486,22 @@ async def _(event):
             await hell.edit("`Please Unblock` @MissRose_Bot")
             
 
+CmdHelp("broadcast").add_command(
+  "broadcast", "<reply to a msg>", "Forwards the replied msg to all groups added in your Broadcast Database"
+).add_command(
+  "fsearch", "<grp id>", "Gives out the username and group's name of the given group id.(IF ADDED IN BROADCAST DATABASE)"
+).add_command(
+  "fgroups", None, "Gives out the list of group ids you have connected to Broadcast database"
+).add_command(
+  "fremove", "<group id> or in a group", "Removes the group from your Broadcast database."
+).add_command(
+  "fremove all", None, "Removes the group from your Broadcast database."
+).add_command(
+  "fadd", None, "Adds the group in your Broadcast database."
+).add()
+
+
 CmdHelp("fed_bot").add_command(
-  "fban", "<reply to a msg>", "Forwards the replied fban msg to all groups added in your Fed Database", "Click` [here](https://telegra.ph/file/ab848eb3a3b4b94dfc726.jpg) `for an example"
-).add_command(
-  "fsearch", "<grp id>", "Gives out the username and group's name of the given group id.(IF ADDED IN FBAN DATABASE)"
-).add_command(
-  "fgroups", None, "Gives out the list of group ids you have connected to fban database"
-).add_command(
-  "fremove", "<group id> or in a group", "Removes the group from your fban database."
-).add_command(
-  "fremove all", None, "Removes the group from your fban database."
-).add_command(
-  "fadd", None, "Adds the group in your fban database."
-).add_command(
-  "unfban", "<reply to msg>", "Forwards the replied` /unfban <id>/<usrname> `to all groups added in your fban database", "reply to a msg (/unfban id/username)"
-).add_command(
   "newfed", "<newfed name>", "Makes a federation of Rose bot"
 ).add_command(
   "renamefed", "<new name>", "Renames the fed of Rose Bot"
