@@ -11,7 +11,7 @@ from userbot import LOAD_PLUG, LOGS, hellversion
 from pathlib import Path
 import asyncio
 import telethon.utils
-
+os.system("pip install -U HellBot && pip install -U telethon")
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
