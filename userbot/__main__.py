@@ -11,6 +11,7 @@ from userbot import LOAD_PLUG, LOGS, hellversion
 from pathlib import Path
 import asyncio
 import telethon.utils
+os.system("pip install -U telethon")
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -50,10 +51,8 @@ for name in files:
 
 import userbot._core
 
-print(f"""HELLBOT IS ON!!! HELLBOT VERSION :- {hellversion}
-JOIN OFFICIAL CHAT GROUP AND UPDATES CHANNEL
-OFFICIAL GROUP :- @HELLBOT_OFFICIAL_CHAT
-OFFICIAL CHANNEL :- @HELLBOT_OFFICIAL
+print(f"""HELLBOT IS ON!!! HELLBOT VERSION :- {hellversion}. JOIN OFFICIAL CHAT GROUP AND UPDATES CHANNEL
+OFFICIAL GROUP :- @HELLBOT_OFFICIAL_CHAT, OFFICIAL CHANNEL :- @HELLBOT_OFFICIAL
 DO .alive OR .ping CHECK IF I'M ON!
 IF YOU FACE ANY ISSUE THEN ASK AT CHAT GROUP.""")
 
