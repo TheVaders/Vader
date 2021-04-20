@@ -9,6 +9,8 @@ from hellbot.cmdhelp import CmdHelp
 @bot.on(admin_cmd(pattern="qrimg ?(.*)"))
 @bot.on(sudo_cmd(pattern="qrimg ?(.*)", allow_sudo=True))
 async def _(event):
+    if event.fwd_from:
+        return
     tx = event.pattern_match.group(1)
     if not tx:
         return await eor(event, "Give Text")
@@ -27,6 +29,8 @@ async def _(event):
 @bot.on(admin_cmd(pattern="qrmark ?(.*)"))
 @bot.on(sudo_cmd(pattern="qrmark ?(.*)", allow_sudo=True))
 async def _(event):
+    if event.fwd_from:
+        return
     tx = event.pattern_match.group(1)
     r = await event.get_reply_message()
     if not (tx and r and r.media):
@@ -42,6 +46,8 @@ async def _(event):
 @bot.on(admin_cmd(pattern="qrdecode$"))
 @bot.on(sudo_cmd(pattern="qrdecode$", allow_sudo=True))
 async def _(event):
+    if event.fwd_from:
+        return
     r = await event.get_reply_message()
     if not (r and r.media):
         return await eor(event, "reply to image and Give Text")
